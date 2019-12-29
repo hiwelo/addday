@@ -11,7 +11,7 @@ import { writeStore } from './writeStore';
  * 
  * @link https://docs.expo.io/versions/latest/sdk/securestore/#securestoregetitemasynckey-options
  */
-export async function removeAsync(key: string, options: SecureStoreOptions) {
+export async function removeAsync(key: string, options: SecureStoreOptions): Promise<void> {
   return new Promise(async (resolve, reject) => {
     try {
       // early-termination if there is no file currently storing information

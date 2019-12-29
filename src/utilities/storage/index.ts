@@ -1,2 +1,1 @@
-export { createDirectory } from './createDirectory';
-export { getAsync } from './getAsync';
+export { createStorage } from './createStorage';

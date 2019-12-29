@@ -14,7 +14,7 @@ import { writeStore } from './writeStore';
  * 
  * @link https://docs.expo.io/versions/latest/sdk/securestore/#securestoregetitemasynckey-options
  */
-export async function setAsync(key: string, value: any, options: SecureStoreOptions): Promise<null> {
+export async function setAsync(key: string, value: any, options: SecureStoreOptions): Promise<void> {
   return new Promise(async (resolve, reject) => {
     try {
       // fetches the current store 
