@@ -3,20 +3,14 @@ import { persistStore, persistCombineReducers } from 'redux-persist';
 import createSecureStore from 'redux-persist-expo-securestore';
 import { reducers } from './reducers';
 
-// Secure storage
 const storage = createSecureStore();
-
-const config = {
+const persistConfig = {
   key: 'root',
   storage,
 };
 
-const reducer = persistCombineReducers(config, reducers);
+const persistedReducers = persistCombineReducers(persistConfig, reducers);
+const store = createStore(persistedReducers);
+const persistor = persistStore(store);
 
-export function configureStore() {
-  // ...
-  const store = createStore(reducer);
-  const persistor = persistStore(store);
-
-  return { persistor, store };
-}
+export { persistor, store };
