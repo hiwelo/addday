@@ -8,12 +8,12 @@ const storage = createSecureStore();
 
 const config = {
   key: 'root',
-  storage
+  storage,
 };
 
 const reducer = persistCombineReducers(config, reducers);
 
-function configureStore() {
+export function configureStore() {
   // ...
   const store = createStore(reducer);
   const persistor = persistStore(store);

@@ -4,6 +4,8 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
+    "lint": "tsc --noEmit && eslint --ext .ts,.tsx .",
+    "prettier:write": "prettier --write **/*.{ts,tsx,json} && prettier --write *.{ts,tsx,json}",
     "web": "expo start --web",
     "eject": "expo eject",
     "test": "jest"
@@ -24,17 +26,32 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
+    "@react-native-community/eslint-config": "^0.0.7",
     "@types/crypto-js": "^3.1.43",
     "@types/jest": "^24.0.25",
     "@types/react": "~16.9.0",
     "@types/react-native": "~0.60.23",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
     "babel-preset-expo": "~8.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-typescript": "^6.3.1",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.0",
+    "i": "^0.3.6",
     "jest-expo": "^36.0.1",
-    "typescript": "~3.6.3"
+    "npm": "^6.13.7",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.5"
   },
   "private": true,
   "jest": {
     "preset": "jest-expo",
-    "transformIgnorePatterns": ["node_modules/(?!((jest-)?react-native|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|sentry-expo|native-base|redux-persist-expo-securestore))"]
+    "transformIgnorePatterns": [
+      "node_modules/(?!((jest-)?react-native|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|sentry-expo|native-base|redux-persist-expo-securestore))"
+    ]
   }
 }

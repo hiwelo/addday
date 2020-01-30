@@ -1,0 +1,28 @@
+{
+  "root": true,
+  "extends": [
+    "@react-native-community",
+    "airbnb-typescript",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "prettier/react"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".ts", ".tsx"]
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "all",
+        "singleQuote": true,
+        "printWidth": 80
+      }
+    ],
+    "import/prefer-default-export": 0
+  },
+  "plugins": ["prettier"]
+}
