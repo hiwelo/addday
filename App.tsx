@@ -13,6 +13,7 @@ import i18nConfig from './src/config/i18n';
 import sentryConfig from './src/config/sentry';
 import { getPersistor, getStore } from './src/data/store';
 import translations from './src/i18n/translations';
+import LocalizationContext from './src/services/LocalizationProvider';
 import WelcomeScreen from './src/views/WelcomeScreen';
 
 const App: React.FC = () => {
@@ -36,11 +37,13 @@ const App: React.FC = () => {
     <ApplicationProvider mapping={mapping} theme={darkTheme}>
       <Provider store={store}>
         <PersistGate persistor={persistor as any}>
-          <NavigationContainer>
-            <Navigator>
-              <Screen component={WelcomeScreen} name="Welcome" />
-            </Navigator>
-          </NavigationContainer>
+          <LocalizationContext>
+            <NavigationContainer>
+              <Navigator>
+                <Screen component={WelcomeScreen} name="Welcome" />
+              </Navigator>
+            </NavigationContainer>
+          </LocalizationContext>
         </PersistGate>
       </Provider>
     </ApplicationProvider>
