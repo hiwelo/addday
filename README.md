@@ -70,6 +70,12 @@ needed commands to run in your local environment.
 In order to run any Android simulation, you will need to download and install
 _[Android Studio] 3_.
 
+## Required environment variable
+
+- `SENTRY_APP_DSN`: DSN to use for the current instance of the application
+- `SENTRY_AUTH_TOKEN`: Auth token to use with the Sentry API
+- `SENTRY_DEBUG`: Indicates the debug parameter for the Sentry API
+
 ## Tech stack
 
 - **[expo]**, open source platform for making universal native app for Android,
