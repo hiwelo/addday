@@ -4,7 +4,7 @@ on: [pull_request]
 
 jobs:
   setup:
-    name: Setup Expo
+    name: Publish PR to Expo
     runs-on: ubuntu-latest
 
     steps:
@@ -44,15 +44,11 @@ jobs:
       - name: Publish
         run: expo publish --release-channel=pr-${{ github.event.number }}
 
-      - name: Generate Expo link
-        id: expo-link
-        run: echo "::set-output url=path::@hiwelo/addday?release-channel=pr-${{ github.event.number }}"
-
       - uses: bobheadxi/deployments@master
         if: always()
         with:
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          env_url: ${{ steps.expo-link.outputs.url }}
+          env_url: 'https://expo.io/@hiwelo/addday?release-channel=pr-${{ github.event.number }}'
           status: ${{ job.status }}
           step: finish
           token: ${{ secrets.GITHUB_TOKEN }}
