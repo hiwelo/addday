@@ -1,7 +1,16 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
+import { Text } from 'react-native';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
-import SourceApp from './src';
+import { persistor, store } from './src/data';
 
-const RedirectToSourceApp: FunctionComponent = () => <SourceApp />;
+const App: React.FC = () => (
+  <Provider store={store}>
+    <PersistGate persistor={persistor}>
+      <Text>Hello World!</Text>
+    </PersistGate>
+  </Provider>
+);
 
-export default RedirectToSourceApp;
+export default App;
