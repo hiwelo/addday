@@ -18,7 +18,13 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "studio.raccoon.addday",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "studio.raccoon.addday",
+      "versionCode": 1
     },
     "hooks": {
       "postPublish": [
