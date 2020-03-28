@@ -1,10 +1,16 @@
-import { dark as darkTheme, mapping } from '@eva-design/eva';
+import {
+  dark as darkTheme,
+  light as lightTheme,
+  mapping,
+} from '@eva-design/eva';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { ApplicationProvider } from '@ui-kitten/components';
 import { locale } from 'expo-localization';
 import i18n from 'i18n-js';
 import React from 'react';
+import { AppearanceProvider, useColorScheme } from 'react-native-appearance';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import * as Sentry from 'sentry-expo';
@@ -33,20 +39,34 @@ const App: React.FC = () => {
   i18n.locale = locale;
   i18n.translations = translations;
 
+  /** Initializes the theme */
+  const colorScheme = useColorScheme();
+  const theme = colorScheme === 'dark' ? darkTheme : lightTheme;
+
   return (
-    <ApplicationProvider mapping={mapping} theme={darkTheme}>
-      <Provider store={store}>
-        <PersistGate persistor={persistor as any}>
-          <LocalizationContext>
-            <NavigationContainer>
-              <Navigator>
-                <Screen component={WelcomeScreen} name="Welcome" />
-              </Navigator>
-            </NavigationContainer>
-          </LocalizationContext>
-        </PersistGate>
-      </Provider>
-    </ApplicationProvider>
+    <AppearanceProvider>
+      <ApplicationProvider mapping={mapping} theme={theme}>
+        <Provider store={store}>
+          <PersistGate persistor={persistor as any}>
+            <SafeAreaProvider>
+              <LocalizationContext>
+                <NavigationContainer>
+                  <Navigator>
+                    <Screen
+                      component={WelcomeScreen}
+                      name="Welcome"
+                      options={{
+                        headerShown: false,
+                      }}
+                    />
+                  </Navigator>
+                </NavigationContainer>
+              </LocalizationContext>
+            </SafeAreaProvider>
+          </PersistGate>
+        </Provider>
+      </ApplicationProvider>
+    </AppearanceProvider>
   );
 };
 
