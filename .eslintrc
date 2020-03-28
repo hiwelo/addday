@@ -1,0 +1,23 @@
+{
+  "root": true,
+  "extends": [
+    "universe/native",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended",
+    "prettier/react"
+  ],
+  "plugins": ["prettier", "react-hooks"],
+  "rules": {
+    "flowtype/no-types-missing-file-annotation": "off",
+    "prettier/prettier": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".ts", ".tsx"]
+      }
+    ]
+  }
+}
