@@ -1,0 +1,53 @@
+name: Publish ADDday
+
+on: [pull_request]
+
+jobs:
+  setup:
+    name: Setup Expo
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - uses: expo/expo-github-action@v5
+        with:
+          expo-version: 3.x
+          expo-username: ${{ secrets.EXPO_CLI_USERNAME }}
+          expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
+          expo-cache: true
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v1
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - uses: bobheadxi/deployments@master
+        id: deployment
+        with:
+          env: development
+          step: start
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish
+        run: expo publish --release-channel=pr-${{ github.event.number }}
+
+      - uses: bobheadxi/deployments@master
+        if: always()
+        with:
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          status: ${{ job.status }}
+          step: finish
+          token: ${{ secrets.GITHUB_TOKEN }}
