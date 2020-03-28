@@ -1,12 +1,12 @@
 import React from 'react';
-import { Text } from 'react-native';
 
+import Heading from '../components/Heading';
 import { useI18n } from '../services/LocalizationProvider';
 
 const WelcomeScreen: React.FC = () => {
   const { __ } = useI18n();
 
-  return <Text>{__('welcome')}</Text>;
+  return <Heading>{__('welcome')}</Heading>;
 };
 
 export default WelcomeScreen;
