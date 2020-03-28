@@ -4,7 +4,7 @@ import Heading from '../components/Heading';
 import ViewLayout from '../components/ViewLayout';
 import { useI18n } from '../services/LocalizationProvider';
 
-const Dashboard: React.FC = () => {
+const DashboardScreen: React.FC = () => {
   const { __ } = useI18n();
 
   return (
@@ -14,4 +14,4 @@ const Dashboard: React.FC = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardScreen;

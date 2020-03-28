@@ -4,7 +4,6 @@ import {
   mapping,
 } from '@eva-design/eva';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import { ApplicationProvider } from '@ui-kitten/components';
 import { locale } from 'expo-localization';
 import i18n from 'i18n-js';
@@ -17,21 +16,21 @@ import * as Sentry from 'sentry-expo';
 
 import i18nConfig from './src/config/i18n';
 import sentryConfig from './src/config/sentry';
-import { getPersistor, getStore } from './src/data/store';
+import { getPersistor, getState, getStore } from './src/data/store';
 import translations from './src/i18n/translations';
 import LocalizationContext from './src/services/LocalizationProvider';
-import WelcomeScreen from './src/views/WelcomeScreen';
+import DashboardScreen from './src/views/DashboardScreen';
+import WizardScreens from './src/views/Wizard';
 
 const App: React.FC = () => {
   /** Fetches the persistor and the store */
   const persistor = getPersistor();
   const store = getStore();
+  const { user } = getState();
+  const { isInitialized } = user;
 
   /** Initializes Sentry */
   Sentry.init(sentryConfig);
-
-  /** Initializes the navigation and routing system */
-  const { Navigator, Screen } = createStackNavigator();
 
   /** Initializes the localization system */
   i18n.defaultLocale = i18nConfig.defaultLocale;
@@ -51,15 +50,7 @@ const App: React.FC = () => {
             <SafeAreaProvider>
               <LocalizationContext>
                 <NavigationContainer>
-                  <Navigator>
-                    <Screen
-                      component={WelcomeScreen}
-                      name="Welcome"
-                      options={{
-                        headerShown: false,
-                      }}
-                    />
-                  </Navigator>
+                  {isInitialized ? <DashboardScreen /> : <WizardScreens />}
                 </NavigationContainer>
               </LocalizationContext>
             </SafeAreaProvider>
