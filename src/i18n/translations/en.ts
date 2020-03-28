@@ -1,6 +1,7 @@
 const langCode = 'en';
 
 const strings = {
+  dashboard: 'Dashboard',
   welcome: 'Hey! 👋',
 };
 
