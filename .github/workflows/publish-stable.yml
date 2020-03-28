@@ -37,6 +37,13 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Setup environment variable
+        run: |
+          touch .env &&
+          echo "SENTRY_APP_DSN=${{ secrets.SENTRY_APP_DSN}}" >> .env &&
+          echo "SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_AUTH_TOKEN }}" >> .env &&
+          echo "SENTRY_DEBUG=${{ secrets.SENTRY_DEBUG }}" >> .env
+
       - uses: bobheadxi/deployments@master
         id: deployment
         with:
