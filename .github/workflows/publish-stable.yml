@@ -47,10 +47,15 @@ jobs:
       - name: Publish
         run: expo publish --release-channel=stable
 
+      - name: Generate Expo link
+        id: expo-link
+        run: echo "::set-output url=path::@hiwelo/addday?release-channel=stable"
+
       - uses: bobheadxi/deployments@master
         if: always()
         with:
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          env_url: ${{ steps.expo-link.outputs.url }}
           status: ${{ job.status }}
           step: finish
           token: ${{ secrets.GITHUB_TOKEN }}
