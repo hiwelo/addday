@@ -19,6 +19,17 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "Raccoon Studio",
+            "project": "ADDday"
+          }
+        }
+      ]
     }
   }
 }
