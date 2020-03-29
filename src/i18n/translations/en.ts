@@ -2,7 +2,10 @@
 const langCode = 'en';
 
 const strings = {
-  dashboard: 'Dashboard',
+  dashboardScreen: {
+    title: 'Hey there! 👋',
+    subtitle: 'How are you today, {{firstName}}?',
+  },
   crashDataAuthScreen: {
     title: 'Analytics 👩🏾‍⚕️',
     statement: `This application is tracker-free.`,
@@ -27,6 +30,11 @@ const strings = {
     whoAmI: `I'm an ADHD companion application.\nMy purpose is to help you with your daily routine and medications, if you have any.`,
     ready: `Ready?\nThis small wizard will guide you through my configuration!`,
     cta: `Let's go!`,
+  },
+  wizardProfileScreen: {
+    title: `Your profile 🧬`,
+    fullNameLabel: `How should we call you?`,
+    cta: `Configure the app`,
   },
 };
 

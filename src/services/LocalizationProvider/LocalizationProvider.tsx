@@ -16,7 +16,7 @@ const LocalizationProvider: React.FC = ({ children }) => {
   return (
     <LocalizationContext.Provider
       value={{
-        __: key => i18n.t(key),
+        __: i18n.t,
         locale,
       }}
     >

@@ -42,6 +42,10 @@ const customThemeMapping = {
     'text-caption-2-line-height': 18,
     'text-caption-2-font-weight': '700',
 
+    'text-label-font-size': 16,
+    'text-label-line-height': 24,
+    'text-label-font-weight': '800',
+
     'border-radius': 8,
   },
   components: {

@@ -1,5 +1,6 @@
 import { mapping } from '@eva-design/eva';
 import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { ApplicationProvider } from '@ui-kitten/components';
 import { locale } from 'expo-localization';
 import i18n from 'i18n-js';
@@ -18,16 +19,15 @@ import LocalizationContext from './src/services/LocalizationProvider';
 import customThemeMapping from './src/themes/customThemeMapping';
 import darkTheme from './src/themes/darkTheme';
 import lightTheme from './src/themes/lightTheme';
-import DashboardScreen from './src/views/DashboardScreen';
+import InAppScreens from './src/views/InApp';
 import WizardScreens from './src/views/Wizard';
 
 const App: React.FC = () => {
   /** Fetches the persistor and the store */
   const persistor = getPersistor();
   const store = getStore();
-  const { config, user } = getState();
+  const { config } = getState();
   const { sentryEnrollment } = config;
-  const { isInitialized } = user;
 
   /** Initializes Sentry, if the user enrolled themselves for it */
   if (sentryEnrollment) Sentry.init(sentryConfig);
@@ -42,6 +42,9 @@ const App: React.FC = () => {
   const colorScheme = useColorScheme();
   const theme = colorScheme === 'dark' ? darkTheme : lightTheme;
 
+  /** Initializes the stack navigation */
+  const { Navigator, Screen } = createStackNavigator();
+
   return (
     <AppearanceProvider>
       <ApplicationProvider
@@ -54,7 +57,18 @@ const App: React.FC = () => {
             <SafeAreaProvider>
               <LocalizationContext>
                 <NavigationContainer>
-                  {isInitialized ? <DashboardScreen /> : <WizardScreens />}
+                  <Navigator>
+                    <Screen
+                      component={InAppScreens}
+                      name="InAppScreens"
+                      options={{ headerShown: false }}
+                    />
+                    <Screen
+                      component={WizardScreens}
+                      name="WizardScreens"
+                      options={{ headerShown: false }}
+                    />
+                  </Navigator>
                 </NavigationContainer>
               </LocalizationContext>
             </SafeAreaProvider>
