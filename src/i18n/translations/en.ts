@@ -8,7 +8,7 @@ const strings = {
     statement: `More than any other personal information, I strongly believe that your health information should remain private.`,
     context: `The Wall Street Journal under-covered in 2018 that a series of health apps—including mood and pill trackers—were sharing information with platforms like Facebook and advertisement networks.`,
     localOnly: `All information shared with this app is encrypted and locally stored on your device.`,
-    noCloud: `There is no cloud, so we're not moving your health information around.`,
+    noCloud: `There is no cloud, so your health information is not moved around.`,
     signature: `Damien\nDeveloper of ADDday`,
     cta: `Got it!`,
   },
