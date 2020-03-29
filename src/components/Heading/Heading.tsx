@@ -1,18 +1,10 @@
-import { Text, TextProps } from '@ui-kitten/components';
-import React from 'react';
+import { Text } from '@ui-kitten/components';
+import styled from 'styled-components/native';
 
-import Space from '../Space';
-
-const Heading: React.FC<HeadingProps> = ({ children }) => {
-  return (
-    <Space type="comfortable">
-      <Text category="h1">{children}</Text>
-    </Space>
-  );
-};
-
-export interface HeadingProps extends TextProps {
-  children: string;
-}
+const Heading = styled(Text).attrs({ category: 'h1' })`
+  font-size: 31px;
+  font-weight: 800;
+  line-height: 46px;
+`;
 
 export default Heading;

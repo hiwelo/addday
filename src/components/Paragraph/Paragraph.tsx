@@ -1,9 +1,13 @@
-import { Text } from '@ui-kitten/components';
-import styled from 'styled-components/native';
+import { TextProps } from '@ui-kitten/components';
+import React from 'react';
 
-const Paragraph = styled(Text).attrs({ category: 'p1' })`
-  font-size: 18px;
-  line-height: 26px;
-`;
+import Space from '../Space';
+import Text from '../Text';
+
+const Paragraph: React.FC<TextProps> = ({ children }) => (
+  <Space>
+    <Text>{children}</Text>
+  </Space>
+);
 
 export default Paragraph;

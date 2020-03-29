@@ -4,6 +4,7 @@ import React from 'react';
 import Heading from '../../components/Heading';
 import Paragraph from '../../components/Paragraph';
 import Space from '../../components/Space';
+import Subheading from '../../components/Subheading';
 import ViewLayout from '../../components/ViewLayout';
 import { useI18n } from '../../services/LocalizationProvider';
 
@@ -13,16 +14,14 @@ const WelcomeScreen: React.FC = () => {
   return (
     <ViewLayout>
       <Layout style={{ marginBottom: 'auto', marginTop: 'auto' }}>
-        <Heading>{__('welcomeScreen.title')}</Heading>
         <Space>
-          <Paragraph>{__('welcomeScreen.greeting')}</Paragraph>
+          <Heading>{__('welcomeScreen.title')}</Heading>
         </Space>
         <Space>
-          <Paragraph>{__('welcomeScreen.whoAmI')}</Paragraph>
+          <Subheading>{__('welcomeScreen.greeting')}</Subheading>
         </Space>
-        <Space>
-          <Paragraph>{__('welcomeScreen.ready')}</Paragraph>
-        </Space>
+        <Paragraph>{__('welcomeScreen.whoAmI')}</Paragraph>
+        <Paragraph>{__('welcomeScreen.ready')}</Paragraph>
       </Layout>
       <Layout style={{ marginTop: 'auto' }}>
         <Button>{__('welcomeScreen.cta')}</Button>
