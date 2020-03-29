@@ -1,6 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 
+import PrivacyScreen from './PrivacyScreen';
 import WelcomeScreen from './WelcomeScreen';
 
 const WizardScreens: React.FC = () => {
@@ -12,6 +13,11 @@ const WizardScreens: React.FC = () => {
       <Screen
         component={WelcomeScreen}
         name="WelcomeScreen"
+        options={{ headerShown: false }}
+      />
+      <Screen
+        component={PrivacyScreen}
+        name="PrivacyScreen"
         options={{ headerShown: false }}
       />
     </Navigator>

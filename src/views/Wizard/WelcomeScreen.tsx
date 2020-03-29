@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import { Button, Layout } from '@ui-kitten/components';
 import React from 'react';
 
@@ -10,6 +11,7 @@ import { useI18n } from '../../services/LocalizationProvider';
 
 const WelcomeScreen: React.FC = () => {
   const { __ } = useI18n();
+  const { navigate } = useNavigation();
 
   return (
     <ViewLayout>
@@ -24,7 +26,9 @@ const WelcomeScreen: React.FC = () => {
         <Paragraph>{__('welcomeScreen.ready')}</Paragraph>
       </Layout>
       <Layout style={{ marginTop: 'auto' }}>
-        <Button>{__('welcomeScreen.cta')}</Button>
+        <Button onPress={() => navigate('PrivacyScreen')}>
+          {__('welcomeScreen.cta')}
+        </Button>
       </Layout>
     </ViewLayout>
   );
