@@ -3,6 +3,15 @@ const langCode = 'en';
 
 const strings = {
   dashboard: 'Dashboard',
+  crashDataAuthScreen: {
+    title: 'Analytics 👩🏾‍⚕️',
+    statement: `This application is tracker-free.`,
+    helpMe: `If you want to help the development, and participate in a more secure and stable app, you can opt-in to share errors and crashes with the project.`,
+    service: `To centralize all debug and errors, this app is using Sentry, a GDPR-compliant error-tracking software.`,
+    informationShared: `If you decide to opt-in, only crashes, errors and some device information will be shared. No health and personal information are involved.`,
+    toggle: `Share crashes and errors information with the project`,
+    cta: `We're done, let's focus on you!`,
+  },
   privacyScreen: {
     title: 'Privacy notice 🕵🏽',
     statement: `More than any other personal information, I strongly believe that your health information should remain private.`,

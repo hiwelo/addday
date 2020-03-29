@@ -18,6 +18,14 @@ const customThemeMapping = {
     'text-heading-4-line-height': 33,
     'text-heading-4-font-weight': '800',
 
+    'text-subtitle-1-font-size': 22,
+    'text-subtitle-1-line-height': 33,
+    'text-subtitle-1-font-weight': '600',
+
+    'text-subtitle-2-font-size': 18,
+    'text-subtitle-2-line-height': 27,
+    'text-subtitle-2-font-weight': '600',
+
     'text-paragraph-1-font-size': 18,
     'text-paragraph-1-line-height': 27,
     'text-paragraph-1-font-weight': '400',
@@ -25,6 +33,14 @@ const customThemeMapping = {
     'text-paragraph-2-font-size': 15,
     'text-paragraph-2-line-height': 23,
     'text-paragraph-2-font-weight': '400',
+
+    'text-caption-1-font-size': 16,
+    'text-caption-1-line-height': 24,
+    'text-caption-1-font-weight': '700',
+
+    'text-caption-2-font-size': 12,
+    'text-caption-2-line-height': 18,
+    'text-caption-2-font-weight': '700',
 
     'border-radius': 8,
   },
@@ -44,6 +60,15 @@ const customThemeMapping = {
         },
       },
     },
+    // Toggle: {
+    //   appearances: {
+    //     default: {
+    //       mapping: {
+    //         textFontSize:
+    //       }
+    //     }
+    //   }
+    // }
   },
 };
 

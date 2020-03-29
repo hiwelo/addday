@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import { Button, Layout } from '@ui-kitten/components';
 import React from 'react';
 
@@ -10,6 +11,7 @@ import { useI18n } from '../../services/LocalizationProvider';
 
 const PrivacyScreen: React.FC = () => {
   const { __ } = useI18n();
+  const { navigate } = useNavigation();
 
   return (
     <ViewLayout>
@@ -26,7 +28,9 @@ const PrivacyScreen: React.FC = () => {
         </ScrollableContainer>
       </Layout>
       <Layout>
-        <Button>{__('privacyScreen.cta')}</Button>
+        <Button onPress={() => navigate('CrashDataAuthScreen')}>
+          {__('privacyScreen.cta')}
+        </Button>
       </Layout>
     </ViewLayout>
   );
