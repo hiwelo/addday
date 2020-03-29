@@ -25,11 +25,12 @@ const App: React.FC = () => {
   /** Fetches the persistor and the store */
   const persistor = getPersistor();
   const store = getStore();
-  const { user } = getState();
+  const { config, user } = getState();
+  const { sentryEnrollment } = config;
   const { isInitialized } = user;
 
-  /** Initializes Sentry */
-  Sentry.init(sentryConfig);
+  /** Initializes Sentry, if the user enrolled themselves for it */
+  if (sentryEnrollment) Sentry.init(sentryConfig);
 
   /** Initializes the localization system */
   i18n.defaultLocale = i18nConfig.defaultLocale;
