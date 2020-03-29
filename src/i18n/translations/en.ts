@@ -10,10 +10,10 @@ const strings = {
     localOnly: `All information shared with this app is encrypted and locally stored on your device.`,
     noCloud: `There is no cloud, so your health information is not moved around.`,
     signature: `Damien\nDeveloper of ADDday`,
-    cta: `Got it!`,
+    cta: `Let's keep this between us!`,
   },
   welcomeScreen: {
-    title: 'Hey! 👋',
+    title: `Hey! 👋`,
     greeting: `I'm Sam, nice to meet you!`,
     whoAmI: `I'm an ADHD companion application.\nMy purpose is to help you with your daily routine and medications, if you have any.`,
     ready: `Ready?\nThis small wizard will guide you through my configuration!`,

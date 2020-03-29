@@ -1,8 +1,4 @@
-import {
-  dark as darkTheme,
-  light as lightTheme,
-  mapping,
-} from '@eva-design/eva';
+import { mapping } from '@eva-design/eva';
 import { NavigationContainer } from '@react-navigation/native';
 import { ApplicationProvider } from '@ui-kitten/components';
 import { locale } from 'expo-localization';
@@ -19,6 +15,9 @@ import sentryConfig from './src/config/sentry';
 import { getPersistor, getState, getStore } from './src/data/store';
 import translations from './src/i18n/translations';
 import LocalizationContext from './src/services/LocalizationProvider';
+import customThemeMapping from './src/themes/customThemeMapping';
+import darkTheme from './src/themes/darkTheme';
+import lightTheme from './src/themes/lightTheme';
 import DashboardScreen from './src/views/DashboardScreen';
 import WizardScreens from './src/views/Wizard';
 
@@ -44,7 +43,11 @@ const App: React.FC = () => {
 
   return (
     <AppearanceProvider>
-      <ApplicationProvider mapping={mapping} theme={theme}>
+      <ApplicationProvider
+        customMapping={customThemeMapping as any}
+        mapping={mapping}
+        theme={theme}
+      >
         <Provider store={store}>
           <PersistGate persistor={persistor as any}>
             <SafeAreaProvider>
