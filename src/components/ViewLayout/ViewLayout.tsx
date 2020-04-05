@@ -1,5 +1,11 @@
 import React from 'react';
-import { StatusBar, StatusBarStyle, ScrollView } from 'react-native';
+import {
+  Keyboard,
+  StatusBar,
+  StatusBarStyle,
+  ScrollView,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import { useColorScheme } from 'react-native-appearance';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -16,9 +22,11 @@ const ViewLayout: React.FC<ViewLayoutProps> = ({ children, scrollable }) => {
   return (
     <ViewContainer>
       <StatusBar barStyle={statusBarColor} />
-      <SafeAreaView style={{ flex: 1 }}>
-        <ContentWrapper>{children}</ContentWrapper>
-      </SafeAreaView>
+      <TouchableWithoutFeedback accessible={false} onPress={Keyboard.dismiss}>
+        <SafeAreaView style={{ flex: 1 }}>
+          <ContentWrapper>{children}</ContentWrapper>
+        </SafeAreaView>
+      </TouchableWithoutFeedback>
     </ViewContainer>
   );
 };

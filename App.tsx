@@ -26,8 +26,9 @@ const App: React.FC = () => {
   /** Fetches the persistor and the store */
   const persistor = getPersistor();
   const store = getStore();
-  const { config } = getState();
+  const { config, user } = getState();
   const { sentryEnrollment } = config;
+  const { isInitialized } = user;
 
   /** Initializes Sentry, if the user enrolled themselves for it */
   if (sentryEnrollment) Sentry.init(sentryConfig);
@@ -57,15 +58,19 @@ const App: React.FC = () => {
             <SafeAreaProvider>
               <LocalizationContext>
                 <NavigationContainer>
-                  <Navigator>
-                    <Screen
-                      component={InAppScreens}
-                      name="InAppScreens"
-                      options={{ headerShown: false }}
-                    />
+                  <Navigator
+                    initialRouteName={
+                      isInitialized ? 'InAppScreens' : 'WizardScreens'
+                    }
+                  >
                     <Screen
                       component={WizardScreens}
                       name="WizardScreens"
+                      options={{ headerShown: false }}
+                    />
+                    <Screen
+                      component={InAppScreens}
+                      name="InAppScreens"
                       options={{ headerShown: false }}
                     />
                   </Navigator>

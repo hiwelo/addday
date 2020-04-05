@@ -23,7 +23,7 @@ const WizardProfileScreen: React.FC = () => {
       }),
     );
 
-    navigate('DashboardScreen');
+    navigate('InAppScreens');
   };
 
   return (
