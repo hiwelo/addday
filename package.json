@@ -77,7 +77,8 @@
     "typescript": "^3.7.5"
   },
   "resolutions": {
-    "acorn": "^7.1.1"
+    "acorn": "^7.1.1",
+    "minimist": "^0.2.1"
   },
   "private": true,
   "jest": {
