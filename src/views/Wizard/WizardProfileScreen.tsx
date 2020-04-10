@@ -27,7 +27,7 @@ const WizardProfileScreen: React.FC = () => {
   };
 
   return (
-    <ViewLayout>
+    <ViewLayout hideTabs>
       <Layout style={{ marginBottom: 'auto', marginTop: 'auto' }}>
         <Space>
           <Heading>{__('wizardProfileScreen.title')}</Heading>

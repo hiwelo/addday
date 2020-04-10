@@ -24,7 +24,7 @@ const CrashDataAuthScreen: React.FC = () => {
   };
 
   return (
-    <ViewLayout>
+    <ViewLayout hideTabs>
       <Layout style={{ marginBottom: 'auto', marginTop: 'auto' }}>
         <ScrollableContainer>
           <Space>

@@ -15,6 +15,7 @@ import ViewContainer from './components/ViewContainer';
 const ViewLayout: React.FC<ViewLayoutProps> = ({
   children,
   headerTitle,
+  hideTabs,
   scrollable,
 }) => {
   const theme = useColorScheme();
@@ -28,7 +29,7 @@ const ViewLayout: React.FC<ViewLayoutProps> = ({
       <TouchableWithoutFeedback accessible={false} onPress={Keyboard.dismiss}>
         <SafeAreaView style={{ flex: 1 }}>
           {headerTitle && <ViewHeader hasBackButton title={headerTitle} />}
-          <ContentWrapper>{children}</ContentWrapper>
+          <ContentWrapper scrollable={scrollable}>{children}</ContentWrapper>
         </SafeAreaView>
       </TouchableWithoutFeedback>
     </ViewContainer>
@@ -38,6 +39,8 @@ const ViewLayout: React.FC<ViewLayoutProps> = ({
 export interface ViewLayoutProps {
   /** Renders a header with a back button at the top of the view */
   headerTitle?: string;
+  /** Removes the tab navigation from the view */
+  hideTabs?: boolean;
   /** Makes the full screen scrollable */
   scrollable?: boolean;
 }

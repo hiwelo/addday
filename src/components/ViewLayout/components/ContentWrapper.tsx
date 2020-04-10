@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const ContentWrapper = styled(({ scrollable, ...rest }) =>
   scrollable ? <ScrollView {...rest} /> : <View {...rest} />,
 )`
+  flex: 1;
   padding-left: 24px;
   padding-right: 24px;
 `;

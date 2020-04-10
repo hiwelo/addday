@@ -1,21 +1,25 @@
-import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 
-import DashboardScreen from './DashboardScreen';
+import TabNavigation from '../../components/TabNavigation';
+import tabsConfig from '../../config/tabs';
 
-const InAppScreens: React.FC = () => {
-  /** Initializes the navigation and routing system */
-  const { Navigator, Screen } = createStackNavigator();
+const InApp: React.FC = () => {
+  const tabs = Object.keys(tabsConfig);
+  const { Navigator, Screen } = createBottomTabNavigator();
 
   return (
-    <Navigator>
-      <Screen
-        component={DashboardScreen}
-        name="DashboardScreen"
-        options={{ headerShown: false }}
-      />
+    <Navigator
+      initialRouteName="DashboardScreens"
+      tabBar={props => <TabNavigation {...props} />}
+    >
+      {tabs.map(tab => {
+        const { component, name } = tabsConfig[tab];
+
+        return <Screen component={component} key={name} name={name} />;
+      })}
     </Navigator>
   );
 };
 
-export default InAppScreens;
+export default InApp;

@@ -14,7 +14,7 @@ const WelcomeScreen: React.FC = () => {
   const { navigate } = useNavigation();
 
   return (
-    <ViewLayout>
+    <ViewLayout hideTabs>
       <Layout style={{ marginBottom: 'auto', marginTop: 'auto' }}>
         <Space>
           <Heading>{__('welcomeScreen.title')}</Heading>

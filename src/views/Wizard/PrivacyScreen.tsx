@@ -14,7 +14,7 @@ const PrivacyScreen: React.FC = () => {
   const { navigate } = useNavigation();
 
   return (
-    <ViewLayout>
+    <ViewLayout hideTabs>
       <Layout style={{ marginBottom: 'auto', marginTop: 'auto' }}>
         <ScrollableContainer>
           <Space>

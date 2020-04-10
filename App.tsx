@@ -21,7 +21,6 @@ import customThemeMapping from './src/themes/customThemeMapping';
 import darkTheme from './src/themes/darkTheme';
 import lightTheme from './src/themes/lightTheme';
 import InAppScreens from './src/views/InApp';
-import MedsScreens from './src/views/Meds';
 import WizardScreens from './src/views/Wizard';
 
 const App: React.FC = () => {
@@ -45,7 +44,7 @@ const App: React.FC = () => {
   const colorScheme = useColorScheme();
   const theme = colorScheme === 'dark' ? darkTheme : lightTheme;
 
-  /** Initializes the stack navigation */
+  /** Initializes the navigations */
   const { Navigator, Screen } = createStackNavigator();
 
   return (
@@ -63,22 +62,19 @@ const App: React.FC = () => {
                 <NavigationContainer>
                   <Navigator
                     initialRouteName={
-                      isInitialized ? 'InAppScreens' : 'WizardScreens'
+                      isInitialized ? 'DashboardScreens' : 'WizardScreens'
                     }
                   >
-                    <Screen
-                      component={WizardScreens}
-                      name="WizardScreens"
-                      options={{ headerShown: false }}
-                    />
+                    {!isInitialized && (
+                      <Screen
+                        component={WizardScreens}
+                        name="WizardScreens"
+                        options={{ headerShown: false }}
+                      />
+                    )}
                     <Screen
                       component={InAppScreens}
                       name="InAppScreens"
-                      options={{ headerShown: false }}
-                    />
-                    <Screen
-                      component={MedsScreens}
-                      name="MedsScreens"
                       options={{ headerShown: false }}
                     />
                   </Navigator>
