@@ -22,7 +22,7 @@ const TabNavigation = ({ state }) => {
     <BottomNavigation
       onSelect={onSelect}
       selectedIndex={state.index}
-      style={{ paddingBottom: inset.bottom, paddingTop: 16 }}
+      style={{ paddingBottom: inset.bottom + 4, paddingTop: 16 }}
     >
       {tabs.map(tab => {
         const { icon, name } = tabsConfig[tab];

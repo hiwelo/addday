@@ -65,13 +65,11 @@ const App: React.FC = () => {
                       isInitialized ? 'DashboardScreens' : 'WizardScreens'
                     }
                   >
-                    {!isInitialized && (
-                      <Screen
-                        component={WizardScreens}
-                        name="WizardScreens"
-                        options={{ headerShown: false }}
-                      />
-                    )}
+                    <Screen
+                      component={WizardScreens}
+                      name="WizardScreens"
+                      options={{ headerShown: false }}
+                    />
                     <Screen
                       component={InAppScreens}
                       name="InAppScreens"
