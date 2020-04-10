@@ -3,27 +3,31 @@ import {
   Keyboard,
   StatusBar,
   StatusBarStyle,
-  ScrollView,
   TouchableWithoutFeedback,
 } from 'react-native';
 import { useColorScheme } from 'react-native-appearance';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+import ViewHeader from '../ViewHeader';
+import ContentWrapper from './components/ContentWrapper';
 import ViewContainer from './components/ViewContainer';
 
-const ViewLayout: React.FC<ViewLayoutProps> = ({ children, scrollable }) => {
+const ViewLayout: React.FC<ViewLayoutProps> = ({
+  children,
+  headerTitle,
+  scrollable,
+}) => {
   const theme = useColorScheme();
   const statusBarColor: StatusBarStyle =
     theme === 'dark' ? 'light-content' : 'dark-content';
 
   /** Wraps the content in a scrollview if scrollable is requested */
-  const ContentWrapper = scrollable ? ScrollView : React.Fragment;
-
   return (
     <ViewContainer>
       <StatusBar barStyle={statusBarColor} />
       <TouchableWithoutFeedback accessible={false} onPress={Keyboard.dismiss}>
         <SafeAreaView style={{ flex: 1 }}>
+          {headerTitle && <ViewHeader hasBackButton title={headerTitle} />}
           <ContentWrapper>{children}</ContentWrapper>
         </SafeAreaView>
       </TouchableWithoutFeedback>
@@ -32,6 +36,8 @@ const ViewLayout: React.FC<ViewLayoutProps> = ({ children, scrollable }) => {
 };
 
 export interface ViewLayoutProps {
+  /** Renders a header with a back button at the top of the view */
+  headerTitle?: string;
   /** Makes the full screen scrollable */
   scrollable?: boolean;
 }

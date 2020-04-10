@@ -1,7 +1,8 @@
 import { mapping } from '@eva-design/eva';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { ApplicationProvider } from '@ui-kitten/components';
+import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { locale } from 'expo-localization';
 import i18n from 'i18n-js';
 import React from 'react';
@@ -20,6 +21,7 @@ import customThemeMapping from './src/themes/customThemeMapping';
 import darkTheme from './src/themes/darkTheme';
 import lightTheme from './src/themes/lightTheme';
 import InAppScreens from './src/views/InApp';
+import MedsScreens from './src/views/Meds';
 import WizardScreens from './src/views/Wizard';
 
 const App: React.FC = () => {
@@ -48,6 +50,7 @@ const App: React.FC = () => {
 
   return (
     <AppearanceProvider>
+      <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider
         customMapping={customThemeMapping as any}
         mapping={mapping}
@@ -71,6 +74,11 @@ const App: React.FC = () => {
                     <Screen
                       component={InAppScreens}
                       name="InAppScreens"
+                      options={{ headerShown: false }}
+                    />
+                    <Screen
+                      component={MedsScreens}
+                      name="MedsScreens"
                       options={{ headerShown: false }}
                     />
                   </Navigator>

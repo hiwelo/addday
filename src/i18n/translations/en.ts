@@ -15,6 +15,9 @@ const strings = {
     toggle: `Share crashes and errors information with the project`,
     cta: `We're done, let's focus on you!`,
   },
+  meds: {
+    title: 'Medications',
+  },
   privacyScreen: {
     title: 'Privacy notice 🕵🏽',
     statement: `More than any other personal information, I strongly believe that your health information should remain private.`,
