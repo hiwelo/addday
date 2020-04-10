@@ -66,13 +66,13 @@ const App: React.FC = () => {
                     }
                   >
                     <Screen
-                      component={WizardScreens}
-                      name="WizardScreens"
+                      component={InAppScreens}
+                      name="InAppScreens"
                       options={{ headerShown: false }}
                     />
                     <Screen
-                      component={InAppScreens}
-                      name="InAppScreens"
+                      component={WizardScreens}
+                      name="WizardScreens"
                       options={{ headerShown: false }}
                     />
                   </Navigator>
