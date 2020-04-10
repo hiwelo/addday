@@ -2,7 +2,6 @@ import { Text } from '@ui-kitten/components';
 import React from 'react';
 import { useStore } from 'react-redux';
 
-import Heading from '../../../components/Heading';
 import Space from '../../../components/Space';
 import ViewLayout from '../../../components/ViewLayout';
 import { useI18n } from '../../../services/LocalizationProvider';
@@ -14,8 +13,7 @@ const DashboardScreen: React.FC = () => {
   const { firstName } = user;
 
   return (
-    <ViewLayout>
-      <Heading>{__('dashboardScreen.title')}</Heading>
+    <ViewLayout headerTitle={__('dashboardScreen.title')}>
       <Space type="comfortable">
         <Text category="h4">
           {__('dashboardScreen.subtitle', { firstName })}

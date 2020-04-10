@@ -62,7 +62,7 @@ const App: React.FC = () => {
                 <NavigationContainer>
                   <Navigator
                     initialRouteName={
-                      isInitialized ? 'DashboardScreens' : 'WizardScreens'
+                      isInitialized ? 'InAppScreens' : 'WizardScreens'
                     }
                   >
                     <Screen

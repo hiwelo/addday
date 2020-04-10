@@ -19,7 +19,7 @@ const SettingsScreen: React.FC = () => {
       }),
     );
 
-    navigate('WelcomeScreen');
+    navigate('WizardScreens');
   };
 
   return (
