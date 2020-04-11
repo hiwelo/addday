@@ -1,4 +1,6 @@
 export interface Medication {
+  /** Unique ID for this medication */
+  id: string;
   /** Name of the medication */
   name: string;
 }

@@ -16,6 +16,13 @@ const strings = {
     cta: `We're done, let's focus on you!`,
   },
   meds: {
+    add: 'Add new medication',
+    cta: 'Add Medication',
+    medication: {
+      name: 'Name of the medication',
+      namePlaceholder: 'Dextroamphetamine',
+    },
+    new: 'New Medication',
     title: 'Medications',
   },
   privacyScreen: {

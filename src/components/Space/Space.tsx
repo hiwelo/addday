@@ -1,7 +1,11 @@
-import { Layout } from '@ui-kitten/components';
+import { Layout, LayoutProps } from '@ui-kitten/components';
 import React from 'react';
 
-const Space: React.FC<SpaceProps> = ({ children, type = 'default' }) => {
+const Space: React.FC<SpaceProps> = ({
+  children,
+  type = 'default',
+  ...rest
+}) => {
   const spacing = {
     default: {
       paddingBottom: 16,
@@ -13,10 +17,14 @@ const Space: React.FC<SpaceProps> = ({ children, type = 'default' }) => {
     },
   };
 
-  return <Layout style={{ ...spacing[type] }}>{children}</Layout>;
+  return (
+    <Layout {...rest} style={{ ...spacing[type] }}>
+      {children}
+    </Layout>
+  );
 };
 
-interface SpaceProps {
+interface SpaceProps extends LayoutProps {
   type?: 'default' | 'comfortable';
 }
 

@@ -1,5 +1,3 @@
-import { v4 as uuid } from 'uuid';
-
 import { Medication, MedsState, MedsAction } from './types';
 
 const INITIAL_STATE: MedsState = {
@@ -14,7 +12,7 @@ function medsReducer(state = INITIAL_STATE, action: MedsAction): MedsState {
       return {
         medications: {
           ...state.medications,
-          [uuid()]: value as Medication,
+          [value.id]: value as Medication,
         },
       };
 
