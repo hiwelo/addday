@@ -21,7 +21,10 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "studio.raccoon.addday",
-      "buildNumber": "1.0.0"
+      "buildNumber": "1.0.0",
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "This app uses FaceID to secure the access to your perosnal information. Using FaceID helps us ensuring that only the owner of the device can access the stored health information."
+      }
     },
     "android": {
       "package": "studio.raccoon.addday",
