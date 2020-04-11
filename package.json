@@ -20,6 +20,7 @@
     "@ui-kitten/eva-icons": "^5.0.0-alpha.1",
     "crypto-js": "^3.1.9-1",
     "expo": "~36.0.0",
+    "expo-device": "~2.0.0",
     "expo-file-system": "~8.0.0",
     "expo-local-authentication": "~8.0.0",
     "expo-localization": "~8.0.0",
