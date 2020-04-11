@@ -8,7 +8,7 @@ function medsReducer(state = INITIAL_STATE, action: MedsAction): MedsState {
   const { type, value } = action;
 
   switch (type) {
-    case 'MEDS_ADD':
+    case 'MEDS_UPDATE':
       return {
         medications: {
           ...state.medications,

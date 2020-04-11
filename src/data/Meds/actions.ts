@@ -1,10 +1,10 @@
 import { Medication, MedsAction } from './types';
 
-function addMedication(medication: Medication): MedsAction {
+function editMedication(medication: Medication): MedsAction {
   return {
-    type: 'MEDS_ADD',
+    type: 'MEDS_UPDATE',
     value: medication,
   };
 }
 
-export { addMedication };
+export { editMedication };

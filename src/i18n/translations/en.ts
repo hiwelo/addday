@@ -16,14 +16,25 @@ const strings = {
     cta: `We're done, let's focus on you!`,
   },
   meds: {
-    add: 'Add new medication',
+    form: {
+      editTitle: 'Edit {{name}}',
+      newTitle: 'New Medication',
+    },
     cta: 'Add Medication',
     medication: {
-      name: 'Name of the medication',
+      alias: 'Alias (to use in sensible places like notifications)',
+      aliasPlaceholder: '',
+      dosage: 'Dosage',
+      dosagePlaceholder: '5 mg',
+      name: 'Name',
       namePlaceholder: 'Dextroamphetamine',
     },
-    new: 'New Medication',
+    submit: 'Submit',
     title: 'Medications',
+    view: {
+      medicationSection: 'Information',
+      intakeSection: 'Intake',
+    },
   },
   privacyScreen: {
     title: 'Privacy notice 🕵🏽',

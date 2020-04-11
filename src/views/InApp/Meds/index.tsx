@@ -1,6 +1,8 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 
+import EditMedicationScreen from './EditMedicationScreen';
+import MedicationDetailsScreen from './MedicationDetailsScreen';
 import MedsScreen from './MedsScreen';
 import NewMedicationScreen from './NewMedicationScreen';
 
@@ -15,8 +17,18 @@ const MedsScreens: React.FC = () => {
         options={{ headerShown: false }}
       />
       <Screen
+        component={MedicationDetailsScreen}
+        name="MedicationDetailsScreen"
+        options={{ headerShown: false }}
+      />
+      <Screen
         component={NewMedicationScreen}
         name="NewMedicationScreen"
+        options={{ headerShown: false }}
+      />
+      <Screen
+        component={EditMedicationScreen}
+        name="EditMedicationScreen"
         options={{ headerShown: false }}
       />
     </Navigator>

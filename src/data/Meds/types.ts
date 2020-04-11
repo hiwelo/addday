@@ -3,10 +3,14 @@ export interface Medication {
   id: string;
   /** Name of the medication */
   name: string;
+  /** Alias name for this medication, to use in sensible places */
+  alias?: string;
+  /** Dosage for this instance of the medication */
+  dosage?: string;
 }
 
 /** List keys of available actions for the Meds reducer */
-export type MedsActions = 'MEDS_ADD';
+export type MedsActions = 'MEDS_UPDATE';
 
 /** Information requested to execute an action */
 export type MedsAction = {

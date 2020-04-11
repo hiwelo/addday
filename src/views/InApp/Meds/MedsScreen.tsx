@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import { List, ListItem } from '@ui-kitten/components';
+import { Button, List, ListItem } from '@ui-kitten/components';
 import React from 'react';
 
 import ViewLayout from '../../../components/ViewLayout';
@@ -14,12 +14,31 @@ const MedsScreen: React.FC = () => {
 
   /** Item to render for each medication to display */
   const medicationItem = ({
-    item,
+    item: { alias, dosage, id, name },
     index,
   }: {
     item: Medication;
     index: number;
-  }) => <ListItem description={item.id} key={index} title={item.name} />;
+  }) => {
+    const details = [alias, dosage].filter(Boolean);
+
+    return (
+      <ListItem
+        description={details.join(' • ')}
+        key={index}
+        title={name}
+        accessory={style => (
+          <Button
+            {...style}
+            status="basic"
+            onPress={() => navigate('MedicationDetailsScreen', { id })}
+          >
+            Edit
+          </Button>
+        )}
+      />
+    );
+  };
 
   return (
     <ViewLayout

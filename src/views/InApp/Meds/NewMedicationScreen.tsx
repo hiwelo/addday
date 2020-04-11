@@ -1,11 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
-import { Input, Button } from '@ui-kitten/components';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import Space from '../../../components/Space';
+import MedicationForm from '../../../components/MedicationForm';
 import ViewLayout from '../../../components/ViewLayout';
-import { addMedication } from '../../../data/Meds/actions';
+import { editMedication } from '../../../data/Meds/actions';
+import { Medication } from '../../../data/Meds/types';
 import { createUuid } from '../../../modules/random';
 import { useI18n } from '../../../services/LocalizationProvider';
 
@@ -14,12 +14,11 @@ const NewMedicationScreen: React.FC = () => {
   const { __ } = useI18n();
   const { navigate } = useNavigation();
   const [id, setId] = React.useState<string | undefined>(undefined);
-  const [name, setName] = React.useState('');
 
-  const onSubmit = () => {
-    if (!id) return;
+  const onSubmit = (values: Medication) => {
+    if (!values.name) return;
 
-    dispatch(addMedication({ id, name }));
+    dispatch(editMedication(values));
     navigate('MedsScreen');
   };
 
@@ -33,25 +32,8 @@ const NewMedicationScreen: React.FC = () => {
   }, []);
 
   return (
-    <ViewLayout hasBackButton headerTitle={__('meds.new')} scrollable>
-      {id && (
-        <>
-          <Space />
-          <Space>
-            <Input
-              label={__('meds.medication.name')}
-              onChangeText={setName}
-              placeholder={__('meds.medication.namePlaceholder')}
-              value={name}
-            />
-          </Space>
-          <Space>
-            <Button disabled={!name} onPress={onSubmit}>
-              {__('meds.add')}
-            </Button>
-          </Space>
-        </>
-      )}
+    <ViewLayout hasBackButton headerTitle={__('meds.form.newTitle')} scrollable>
+      {id && <MedicationForm data={{ id, name: '' }} onSubmit={onSubmit} />}
     </ViewLayout>
   );
 };
