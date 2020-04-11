@@ -1,8 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
-import { Button, List, ListItem } from '@ui-kitten/components';
+import { List, ListItem } from '@ui-kitten/components';
 import React from 'react';
 
-import Space from '../../../components/Space';
 import ViewLayout from '../../../components/ViewLayout';
 import { Medication } from '../../../data/Meds/types';
 import useMeds from '../../../modules/meds/hooks';
@@ -23,15 +22,16 @@ const MedsScreen: React.FC = () => {
   }) => <ListItem description={item.id} key={index} title={item.name} />;
 
   return (
-    <ViewLayout headerTitle={__('meds.title')}>
-      <Space type="comfortable">
-        <List data={Object.values(medications)} renderItem={medicationItem} />
-      </Space>
-      <Space type="comfortable">
-        <Button onPress={() => navigate('NewMedicationScreen')}>
-          {__('meds.cta')}
-        </Button>
-      </Space>
+    <ViewLayout
+      headerTitle={__('meds.title')}
+      sideActionIcon="plus"
+      sideAction={() => navigate('NewMedicationScreen')}
+    >
+      <List
+        data={Object.values(medications)}
+        renderItem={medicationItem}
+        style={{ flex: 1 }}
+      />
     </ViewLayout>
   );
 };
