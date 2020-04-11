@@ -64,15 +64,15 @@ const customThemeMapping = {
         },
       },
     },
-    // Toggle: {
-    //   appearances: {
-    //     default: {
-    //       mapping: {
-    //         textFontSize:
-    //       }
-    //     }
-    //   }
-    // }
+    List: {
+      appearances: {
+        default: {
+          mapping: {
+            backgroundColor: 'background-basic-color-1',
+          },
+        },
+      },
+    },
   },
 };
 

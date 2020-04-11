@@ -8,9 +8,11 @@ import i18n from 'i18n-js';
 import React from 'react';
 import { AppearanceProvider, useColorScheme } from 'react-native-appearance';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { useStore } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import i18nConfig from './config/i18n';
+import { UserState } from './data/User/types';
+import { RootState } from './data/types';
 import translations from './i18n/translations';
 import LocalizationContext from './services/LocalizationProvider';
 import customThemeMapping from './themes/customThemeMapping';
@@ -34,9 +36,9 @@ const CoreApp: React.FC = () => {
   const { Navigator, Screen } = createStackNavigator();
 
   /** Fetches the current state of initialization */
-  const { getState } = useStore();
-  const { user } = getState();
-  const { isInitialized } = user;
+  const { isInitialized } = useSelector<RootState>(
+    state => state.user,
+  ) as UserState;
 
   return (
     <AppearanceProvider>
