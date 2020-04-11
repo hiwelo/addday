@@ -1,6 +1,6 @@
-import { AsyncStorage } from 'react-native';
 import { createStore } from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
+import ExpoFileSystemStorage from 'redux-persist-expo-filesystem';
 import createEncryptor from 'redux-persist-transform-encrypt';
 
 import rootReducer from './reducer';
@@ -16,7 +16,7 @@ const encryptor = createEncryptor({
 
 const persistConfig = {
   key: 'root',
-  storage: AsyncStorage,
+  storage: ExpoFileSystemStorage,
   transforms: [encryptor],
 };
 
