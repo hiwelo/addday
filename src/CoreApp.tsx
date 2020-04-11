@@ -16,7 +16,7 @@ import LocalizationContext from './services/LocalizationProvider';
 import customThemeMapping from './themes/customThemeMapping';
 import darkTheme from './themes/darkTheme';
 import lightTheme from './themes/lightTheme';
-import InAppScreens from './views/InApp/Dashboard';
+import InAppScreens from './views/InApp';
 import WizardScreens from './views/Wizard';
 
 const CoreApp: React.FC = () => {

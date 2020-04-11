@@ -3,7 +3,7 @@ import React from 'react';
 
 import DashboardScreen from './DashboardScreen';
 
-const InAppScreens: React.FC = () => {
+const DashboardScreens: React.FC = () => {
   /** Initializes the navigation and routing system */
   const { Navigator, Screen } = createStackNavigator();
 
@@ -18,4 +18,4 @@ const InAppScreens: React.FC = () => {
   );
 };
 
-export default InAppScreens;
+export default DashboardScreens;
