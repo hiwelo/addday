@@ -7,9 +7,9 @@
     "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/images/icon.png",
+    "icon": "./src/assets/images/addday-logo@1024.png",
     "splash": {
-      "image": "./src/assets/images/splash.png",
+      "image": "./src/assets/images/addday-splash-screen.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
