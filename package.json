@@ -89,6 +89,7 @@
     "npm": "^6.13.7",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
+    "semantic-release": "^17.0.7",
     "semantic-release-expo": "^2.2.3",
     "typescript": "^3.8.3"
   },
