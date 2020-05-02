@@ -8,6 +8,7 @@
     "ios": "expo start --ios",
     "lint": "tsc --noEmit && eslint --ext .ts,.tsx .",
     "lint:fix": "yarn lint --fix",
+    "release": "yarn semantic-release",
     "web": "expo start --web",
     "eject": "expo eject",
     "test": "jest"
