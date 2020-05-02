@@ -44,6 +44,11 @@ jobs:
           echo "SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_AUTH_TOKEN }}" >> .env &&
           echo "SENTRY_DEBUG=${{ secrets.SENTRY_DEBUG }}" >> .env
 
+      - name: Semantic release of a new version
+        uses: mgibeau/semantic-release-expo-github-action@v0.2-alpha
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - uses: bobheadxi/deployments@master
         id: deployment
         with:
