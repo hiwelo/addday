@@ -3,7 +3,7 @@ name: Publish ADDday
 on:
   push:
     branches:
-      - stable
+      - master
 
 jobs:
   setup:
@@ -44,24 +44,21 @@ jobs:
           echo "SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_AUTH_TOKEN }}" >> .env &&
           echo "SENTRY_DEBUG=${{ secrets.SENTRY_DEBUG }}" >> .env
 
-      - name: Semantic release of a new version
-        run: GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} yarn release
-
       - uses: bobheadxi/deployments@master
         id: deployment
         with:
-          env: store
+          env: preview
           step: start
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish
-        run: expo publish --release-channel=store
+        run: expo publish --release-channel=preview
 
       - uses: bobheadxi/deployments@master
         if: always()
         with:
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          env_url: 'https://expo.io/@hiwelo/addday?release-channel=store'
+          env_url: 'https://expo.io/@hiwelo/addday?release-channel=preview'
           status: ${{ job.status }}
           step: finish
           token: ${{ secrets.GITHUB_TOKEN }}
