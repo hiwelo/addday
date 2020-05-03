@@ -63,5 +63,3 @@ export type ActionsUnion =
   | SetSentryEnrollmentAction
   | SetUserAction
   | UpdateMedicationAction;
-
-export type RootState = AppState;

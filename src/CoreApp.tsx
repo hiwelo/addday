@@ -11,7 +11,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useSelector } from 'react-redux';
 
 import i18nConfig from './config/i18n';
-import { UserState, RootState } from './data/types';
+import { AppState, UserState } from './data/types';
 import translations from './i18n/translations';
 import LocalizationContext from './services/LocalizationProvider';
 import customThemeMapping from './themes/customThemeMapping';
@@ -35,7 +35,7 @@ const CoreApp: React.FC = () => {
   const { Navigator, Screen } = createStackNavigator();
 
   /** Fetches the current state of initialization */
-  const { isInitialized } = useSelector<RootState>(
+  const { isInitialized } = useSelector<AppState>(
     state => state.user,
   ) as UserState;
 

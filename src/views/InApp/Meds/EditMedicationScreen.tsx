@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import MedicationForm from '../../../components/MedicationForm';
 import ViewLayout from '../../../components/ViewLayout';
 import { editMedication } from '../../../data/Meds/actions';
-import { RootState } from '../../../data/types';
+import { AppState } from '../../../data/types';
 import { Medication } from '../../../models/Medication';
 import { useI18n } from '../../../services/LocalizationProvider';
 
@@ -15,7 +15,7 @@ const EditMedicationScreen: React.FC = () => {
   const { navigate } = useNavigation();
   const { params } = useRoute();
   const { id } = params as EditMedicationScreenProps;
-  const medication = useSelector<RootState>(
+  const medication = useSelector<AppState>(
     state => state.meds.medications[id],
   ) as Medication;
   const { name } = medication;

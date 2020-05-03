@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 import Space from '../../../components/Space';
 import ViewLayout from '../../../components/ViewLayout';
-import { RootState } from '../../../data/types';
+import { AppState } from '../../../data/types';
 import { Medication } from '../../../models/Medication';
 import { useI18n } from '../../../services/LocalizationProvider';
 
@@ -14,7 +14,7 @@ const MedicationDetailsScreen: React.FC = () => {
   const { navigate } = useNavigation();
   const { params } = useRoute();
   const { id } = params as Partial<Medication>;
-  const medication = useSelector<RootState>(
+  const medication = useSelector<AppState>(
     state => state.meds.medications[id],
   ) as Medication;
   const { alias, dosage, name } = medication;
