@@ -6,15 +6,14 @@ import reducer from '../reducer';
 
 const mockedMoment = moment.utc('18:00', 'HH:mm');
 
-const mockedWeeklySchedule: WeeklySchedule = {
-  monday: true,
-  tuesday: false,
-  wednesday: false,
-  thursday: true,
-  friday: true,
-  saturday: false,
-  sunday: false,
-};
+const mockedWeeklySchedule: WeeklySchedule = new Map()
+  .set('monday', true)
+  .set('tuesday', false)
+  .set('wednesday', false)
+  .set('thursday', true)
+  .set('friday', true)
+  .set('saturday', false)
+  .set('sundary', false);
 
 const testScheduledIntake = {
   days: mockedWeeklySchedule,

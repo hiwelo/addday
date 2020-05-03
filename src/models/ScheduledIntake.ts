@@ -7,7 +7,7 @@ export interface ScheduledIntake {
   /** Days of the week */
   days: WeeklySchedule;
   /** Moment of the day to trigger the intake */
-  moment: Moment | null;
+  moment: Moment;
   /** Unique Identifier for the scheduled intake */
   id: string;
   /** Lists medications to take during this intake moment */

@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 import { ScheduledIntake } from '../../models/ScheduledIntake';
 
 function createScheduledIntake(): ScheduledIntake {
@@ -12,7 +14,7 @@ function createScheduledIntake(): ScheduledIntake {
       .set('sunday', false),
     id: '',
     medications: new Map(),
-    moment: null,
+    moment: moment(),
   };
 }
 

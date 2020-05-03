@@ -17,14 +17,14 @@ exports[`Scheduled Medications allows you to add a new scheduled medication 2`] 
 Object {
   "intakes": Map {
     "testScheduledIntake" => Object {
-      "days": Object {
-        "friday": true,
-        "monday": true,
-        "saturday": false,
-        "sunday": false,
-        "thursday": true,
-        "tuesday": false,
-        "wednesday": false,
+      "days": Map {
+        "monday" => true,
+        "tuesday" => false,
+        "wednesday" => false,
+        "thursday" => true,
+        "friday" => true,
+        "saturday" => false,
+        "sundary" => false,
       },
       "id": "testScheduledIntake",
       "medications": Map {
@@ -51,14 +51,14 @@ exports[`Scheduled Medications allows you to clear all existing scheduled medica
 Object {
   "intakes": Map {
     "testScheduledIntake" => Object {
-      "days": Object {
-        "friday": true,
-        "monday": true,
-        "saturday": false,
-        "sunday": false,
-        "thursday": true,
-        "tuesday": false,
-        "wednesday": false,
+      "days": Map {
+        "monday" => true,
+        "tuesday" => false,
+        "wednesday" => false,
+        "thursday" => true,
+        "friday" => true,
+        "saturday" => false,
+        "sundary" => false,
       },
       "id": "testScheduledIntake",
       "medications": Map {},
@@ -83,14 +83,14 @@ exports[`Scheduled Medications allows you to delete an existing scheduled medica
 Object {
   "intakes": Map {
     "testScheduledIntake" => Object {
-      "days": Object {
-        "friday": true,
-        "monday": true,
-        "saturday": false,
-        "sunday": false,
-        "thursday": true,
-        "tuesday": false,
-        "wednesday": false,
+      "days": Map {
+        "monday" => true,
+        "tuesday" => false,
+        "wednesday" => false,
+        "thursday" => true,
+        "friday" => true,
+        "saturday" => false,
+        "sundary" => false,
       },
       "id": "testScheduledIntake",
       "medications": Map {},
@@ -118,14 +118,14 @@ exports[`Scheduled Medications allows you to update an existing scheduled medica
 Object {
   "intakes": Map {
     "testScheduledIntake" => Object {
-      "days": Object {
-        "friday": true,
-        "monday": true,
-        "saturday": false,
-        "sunday": false,
-        "thursday": true,
-        "tuesday": false,
-        "wednesday": false,
+      "days": Map {
+        "monday" => true,
+        "tuesday" => false,
+        "wednesday" => false,
+        "thursday" => true,
+        "friday" => true,
+        "saturday" => false,
+        "sundary" => false,
       },
       "id": "testScheduledIntake",
       "medications": Map {

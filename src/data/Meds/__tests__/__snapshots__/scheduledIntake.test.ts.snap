@@ -3,14 +3,14 @@
 exports[`Scheduled Intakes allows you to add a new scheduled intake 1`] = `
 Object {
   "payload": Object {
-    "days": Object {
-      "friday": true,
-      "monday": true,
-      "saturday": false,
-      "sunday": false,
-      "thursday": true,
-      "tuesday": false,
-      "wednesday": false,
+    "days": Map {
+      "monday" => true,
+      "tuesday" => false,
+      "wednesday" => false,
+      "thursday" => true,
+      "friday" => true,
+      "saturday" => false,
+      "sundary" => false,
     },
     "id": "test",
     "medications": Map {},
@@ -24,14 +24,14 @@ exports[`Scheduled Intakes allows you to add a new scheduled intake 2`] = `
 Object {
   "intakes": Map {
     "test" => Object {
-      "days": Object {
-        "friday": true,
-        "monday": true,
-        "saturday": false,
-        "sunday": false,
-        "thursday": true,
-        "tuesday": false,
-        "wednesday": false,
+      "days": Map {
+        "monday" => true,
+        "tuesday" => false,
+        "wednesday" => false,
+        "thursday" => true,
+        "friday" => true,
+        "saturday" => false,
+        "sundary" => false,
       },
       "id": "test",
       "medications": Map {},
@@ -72,14 +72,14 @@ Object {
 exports[`Scheduled Intakes allows you to update an existing scheduled intake 1`] = `
 Object {
   "payload": Object {
-    "days": Object {
-      "friday": true,
-      "monday": true,
-      "saturday": false,
-      "sunday": false,
-      "thursday": true,
-      "tuesday": false,
-      "wednesday": false,
+    "days": Map {
+      "monday" => true,
+      "tuesday" => false,
+      "wednesday" => false,
+      "thursday" => true,
+      "friday" => true,
+      "saturday" => false,
+      "sundary" => false,
     },
     "id": "test",
     "medications": Map {
@@ -98,14 +98,14 @@ exports[`Scheduled Intakes allows you to update an existing scheduled intake 2`]
 Object {
   "intakes": Map {
     "test" => Object {
-      "days": Object {
-        "friday": true,
-        "monday": true,
-        "saturday": false,
-        "sunday": false,
-        "thursday": true,
-        "tuesday": false,
-        "wednesday": false,
+      "days": Map {
+        "monday" => true,
+        "tuesday" => false,
+        "wednesday" => false,
+        "thursday" => true,
+        "friday" => true,
+        "saturday" => false,
+        "sundary" => false,
       },
       "id": "test",
       "medications": Map {

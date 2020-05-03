@@ -61,11 +61,11 @@ function medsReducer(
     case `RESET_APP`:
       return INITIAL_STATE;
 
-    case `SET_SCHEDULED_INTAKE_ACTION`:
-      return {
-        ...state,
-        intakes: state.intakes.set(action.payload.id, action.payload),
-      };
+    case `SET_SCHEDULED_INTAKE_ACTION`: {
+      state.intakes.set(action.payload.id, action.payload);
+
+      return { ...state };
+    }
 
     case `SET_SCHEDULED_MEDICATION_INTAKE_ACTION`: {
       const scheduledIntake = state.intakes.get(

@@ -10,13 +10,14 @@ import {
   setSentryEnrollment,
   resetApplication,
 } from '../../../data/Config/actions';
+import { AppState } from '../../../data/types';
 import { useI18n } from '../../../services/LocalizationProvider';
 
 const SettingsScreen: React.FC = () => {
   const dispatch = useDispatch();
   const { __ } = useI18n();
   const { navigate } = useNavigation();
-  const { getState } = useStore();
+  const { getState } = useStore<AppState>();
   const { config } = getState();
   const [sentryEnrollment, updateSentryEnrollment] = React.useState(
     config.sentryEnrollment,
@@ -43,6 +44,11 @@ const SettingsScreen: React.FC = () => {
             onChange={updateSentryEnrollment}
             text={__('crashDataAuthScreen.toggle')}
           />
+        </Space>
+        <Space>
+          <Button onPress={() => console.log(getState())}>
+            See current AppState in console
+          </Button>
         </Space>
         <Space>
           <Button onPress={resetAccount}>Reset account</Button>
