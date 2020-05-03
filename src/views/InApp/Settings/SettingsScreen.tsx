@@ -6,8 +6,10 @@ import { useDispatch, useStore } from 'react-redux';
 import ScrollableContainer from '../../../components/ScrollableContainer';
 import Space from '../../../components/Space';
 import ViewLayout from '../../../components/ViewLayout';
-import { setSentryEnrollment } from '../../../data/Config/actions';
-import { setUser } from '../../../data/User/actions';
+import {
+  setSentryEnrollment,
+  resetApplication,
+} from '../../../data/Config/actions';
 import { useI18n } from '../../../services/LocalizationProvider';
 
 const SettingsScreen: React.FC = () => {
@@ -27,12 +29,7 @@ const SettingsScreen: React.FC = () => {
 
   /** This callback is fired to reset the account and loads again the wizard */
   const resetAccount = () => {
-    dispatch(
-      setUser({
-        firstName: '',
-        isInitialized: false,
-      }),
-    );
+    dispatch(resetApplication());
 
     navigate('WizardScreens');
   };
