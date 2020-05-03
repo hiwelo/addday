@@ -1,9 +1,8 @@
 import { useRoute, RouteProp } from '@react-navigation/native';
-import { Text } from '@ui-kitten/components';
 import React from 'react';
 
-import ScheduledIntakeForm from '../../../components/ScheduledIntakeForm/ScheduledIntakeForm';
 import ViewLayout from '../../../components/ViewLayout';
+import WeeklyScheduleSelector from '../../../components/WeeklyScheduleSelector/WeeklyScheduleSelector';
 import { NavigationParamsList } from '../../../models/NavigationParamsList';
 import { ScheduledIntake } from '../../../models/ScheduledIntake';
 import { useScheduledIntake } from '../../../modules/meds';
@@ -18,6 +17,15 @@ const SetScheduledIntakeScreen: React.FC = () => {
   const [scheduledIntake, setScheduledIntake] = React.useState(
     useScheduledIntake(params ? params.id : undefined),
   );
+
+  const updateWeeklySchedule = (
+    weeklySchedule: ScheduledIntake['days'],
+  ): void => {
+    setScheduledIntake({
+      ...scheduledIntake,
+      days: weeklySchedule,
+    });
+  };
 
   /**
    * Effect aiming to generate a unique ID for the new ScheduledIntake if needed
@@ -41,7 +49,10 @@ const SetScheduledIntakeScreen: React.FC = () => {
       headerTitle={__('meds.scheduledIntake.title')}
       scrollable
     >
-      <ScheduledIntakeForm data={scheduledIntake} onSubmit={() => {}} />
+      <WeeklyScheduleSelector
+        weeklySchedule={scheduledIntake.days}
+        onChange={updateWeeklySchedule}
+      />
     </ViewLayout>
   );
 };

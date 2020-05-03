@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 
-import { createScheduledIntake } from '.';
 import { getScheduledIntakes } from '../../data/Meds/selectors';
 import { ScheduledIntake } from '../../models/ScheduledIntake';
+import createScheduledIntake from './createScheduledIntake';
 
 /**
  * Returns the scheduled intake matching the requested identifier,

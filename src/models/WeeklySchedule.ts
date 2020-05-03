@@ -7,4 +7,4 @@ export type WeekDay =
   | 'saturday'
   | 'sunday';
 
-export type WeeklySchedule = Record<WeekDay, boolean>;
+export type WeeklySchedule = Map<WeekDay, boolean>;

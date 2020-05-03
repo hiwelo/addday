@@ -14,7 +14,7 @@ const ScheduledIntakeForm: React.FC<ScheduledIntakeFormProps> = ({
       {({ handleChange, handleBlur, handleSubmit, values }) => (
         <Layout>
           <Space>
-            <Text>{data.id}</Text>
+            <Text>Test</Text>
           </Space>
         </Layout>
       )}
