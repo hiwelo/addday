@@ -1,24 +1,18 @@
-import { EncryptionState, EncryptionAction } from './types';
-
-const INITIAL_STATE: EncryptionState = {
-  key: null,
-};
+import { ActionsUnion, EncryptionState } from '../types';
 
 function encryptionReducer(
-  state = INITIAL_STATE,
-  action: EncryptionAction,
+  state: EncryptionState = { key: null },
+  { type }: ActionsUnion,
 ): EncryptionState {
-  const { type } = action;
-
   switch (type) {
-    case 'SET_KEY':
+    case 'GET_ENCRYPTION_KEY':
+      return state;
+
+    case 'SET_ENCRYPTION_KEY':
       return {
         ...state,
         key: 'test',
       };
-
-    case 'GET_KEY':
-      return state;
 
     default:
       return state;

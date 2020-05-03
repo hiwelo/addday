@@ -6,13 +6,11 @@ function configReducer(
   },
   action: ActionsUnion,
 ): ConfigState {
-  const { type, payload } = action;
-
-  switch (type) {
+  switch (action.type) {
     case 'SENTRY_ENROLLMENT':
       return {
         ...state,
-        sentryEnrollment: payload,
+        sentryEnrollment: action.payload,
       };
 
     default:
