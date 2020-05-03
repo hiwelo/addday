@@ -3,7 +3,7 @@ import { Button, List, ListItem } from '@ui-kitten/components';
 import React from 'react';
 
 import ViewLayout from '../../../components/ViewLayout';
-import { Medication } from '../../../data/Meds/types';
+import { Medication } from '../../../models/Medication';
 import useMeds from '../../../modules/meds/hooks';
 import { useI18n } from '../../../services/LocalizationProvider';
 

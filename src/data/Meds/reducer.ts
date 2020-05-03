@@ -1,18 +1,16 @@
-import { Medication, MedsState, MedsAction } from './types';
+import { ActionsUnion, MedsState } from '../types';
 
-const INITIAL_STATE: MedsState = {
-  medications: {},
-};
-
-function medsReducer(state = INITIAL_STATE, action: MedsAction): MedsState {
-  const { type, value } = action;
-
-  switch (type) {
-    case 'MEDS_UPDATE':
+function medsReducer(
+  state: MedsState = { medications: {} },
+  action: ActionsUnion,
+): MedsState {
+  switch (action.type) {
+    case 'UPDATE_MEDICATION':
       return {
+        ...state,
         medications: {
           ...state.medications,
-          [value.id]: value as Medication,
+          [action.payload.id]: action.payload,
         },
       };
 

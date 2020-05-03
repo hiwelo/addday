@@ -1,10 +1,9 @@
-import { Medication, MedsAction } from './types';
+import { Medication } from '../../models/Medication';
+import { ActionsUnion } from '../types';
 
-function editMedication(medication: Medication): MedsAction {
+export function editMedication(medication: Medication): ActionsUnion {
   return {
-    type: 'MEDS_UPDATE',
-    value: medication,
+    type: 'UPDATE_MEDICATION',
+    payload: medication,
   };
 }
-
-export { editMedication };

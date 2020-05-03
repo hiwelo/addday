@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import MedicationForm from '../../../components/MedicationForm';
 import ViewLayout from '../../../components/ViewLayout';
 import { editMedication } from '../../../data/Meds/actions';
-import { Medication } from '../../../data/Meds/types';
+import { Medication } from '../../../models/Medication';
 import { createUuid } from '../../../modules/random';
 import { useI18n } from '../../../services/LocalizationProvider';
 

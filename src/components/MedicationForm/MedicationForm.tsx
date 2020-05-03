@@ -2,7 +2,7 @@ import { Layout, Input, Button } from '@ui-kitten/components';
 import { Formik } from 'formik';
 import React from 'react';
 
-import { Medication } from '../../data/Meds/types';
+import { Medication } from '../../models/Medication';
 import { useI18n } from '../../services/LocalizationProvider';
 import Space from '../Space';
 

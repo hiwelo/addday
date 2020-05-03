@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 
-import { MedsState } from '../../data/Meds/types';
-import { RootState } from '../../data/types';
+import { RootState, MedsState } from '../../data/types';
 
 /**
  * Returns the list of medications registered in the application

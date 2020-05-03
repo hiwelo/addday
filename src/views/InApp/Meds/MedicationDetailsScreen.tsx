@@ -5,8 +5,8 @@ import { useSelector } from 'react-redux';
 
 import Space from '../../../components/Space';
 import ViewLayout from '../../../components/ViewLayout';
-import { Medication } from '../../../data/Meds/types';
 import { RootState } from '../../../data/types';
+import { Medication } from '../../../models/Medication';
 import { useI18n } from '../../../services/LocalizationProvider';
 
 const MedicationDetailsScreen: React.FC = () => {

@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import MedicationForm from '../../../components/MedicationForm';
 import ViewLayout from '../../../components/ViewLayout';
 import { editMedication } from '../../../data/Meds/actions';
-import { Medication } from '../../../data/Meds/types';
 import { RootState } from '../../../data/types';
+import { Medication } from '../../../models/Medication';
 import { useI18n } from '../../../services/LocalizationProvider';
 
 const EditMedicationScreen: React.FC = () => {
