@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Scheduled Intakes allows you to add a new scheduled intake 1`] = `
+Object {
+  "payload": Object {
+    "days": Object {
+      "friday": true,
+      "monday": true,
+      "saturday": false,
+      "sunday": false,
+      "thursday": true,
+      "tuesday": false,
+      "wednesday": false,
+    },
+    "id": "test",
+    "medications": Map {},
+    "moment": "2020-05-03T18:00:00.000Z",
+  },
+  "type": "SET_SCHEDULED_INTAKE_ACTION",
+}
+`;
+
+exports[`Scheduled Intakes allows you to add a new scheduled intake 2`] = `
+Object {
+  "intakes": Map {
+    "test" => Object {
+      "days": Object {
+        "friday": true,
+        "monday": true,
+        "saturday": false,
+        "sunday": false,
+        "thursday": true,
+        "tuesday": false,
+        "wednesday": false,
+      },
+      "id": "test",
+      "medications": Map {},
+      "moment": "2020-05-03T18:00:00.000Z",
+    },
+  },
+  "medications": Object {},
+}
+`;
+
+exports[`Scheduled Intakes allows you to clear all existing scheduled intake 1`] = `
+Object {
+  "type": "CLEAR_SCHEDULED_INTAKES_ACTION",
+}
+`;
+
+exports[`Scheduled Intakes allows you to clear all existing scheduled intake 2`] = `
+Object {
+  "intakes": Map {},
+  "medications": Object {},
+}
+`;
+
+exports[`Scheduled Intakes allows you to delete an existing scheduled intake 1`] = `
+Object {
+  "payload": "test",
+  "type": "DELETE_SCHEDULED_INTAKE_ACTION",
+}
+`;
+
+exports[`Scheduled Intakes allows you to delete an existing scheduled intake 2`] = `
+Object {
+  "intakes": Map {},
+  "medications": Object {},
+}
+`;
+
+exports[`Scheduled Intakes allows you to update an existing scheduled intake 1`] = `
+Object {
+  "payload": Object {
+    "days": Object {
+      "friday": true,
+      "monday": true,
+      "saturday": false,
+      "sunday": false,
+      "thursday": true,
+      "tuesday": false,
+      "wednesday": false,
+    },
+    "id": "test",
+    "medications": Map {
+      "test" => Object {
+        "medicationId": "test",
+        "units": 2,
+      },
+    },
+    "moment": "2020-05-03T18:00:00.000Z",
+  },
+  "type": "SET_SCHEDULED_INTAKE_ACTION",
+}
+`;
+
+exports[`Scheduled Intakes allows you to update an existing scheduled intake 2`] = `
+Object {
+  "intakes": Map {
+    "test" => Object {
+      "days": Object {
+        "friday": true,
+        "monday": true,
+        "saturday": false,
+        "sunday": false,
+        "thursday": true,
+        "tuesday": false,
+        "wednesday": false,
+      },
+      "id": "test",
+      "medications": Map {
+        "test" => Object {
+          "medicationId": "test",
+          "units": 2,
+        },
+      },
+      "moment": "2020-05-03T18:00:00.000Z",
+    },
+  },
+  "medications": Object {},
+}
+`;
