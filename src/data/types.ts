@@ -1,4 +1,14 @@
 import { Medication } from '../models/Medication';
+import { ScheduledIntake } from '../models/ScheduledIntake';
+
+type ClearScheduledIntakesAction = {
+  type: `CLEAR_SCHEDULED_INTAKES_ACTION`;
+};
+
+type DeleteScheduledIntakeAction = {
+  type: `DELETE_SCHEDULED_INTAKE_ACTION`;
+  payload: ScheduledIntake['id'];
+};
 
 type ResetAppAction = {
   type: `RESET_APP`;
@@ -6,6 +16,11 @@ type ResetAppAction = {
 
 type ResetUserAction = {
   type: `RESET_USER`;
+};
+
+type SetScheduledIntakeAction = {
+  type: `SET_SCHEDULED_INTAKE_ACTION`;
+  payload: ScheduledIntake;
 };
 
 type SetSentryEnrollmentAction = {
@@ -40,6 +55,8 @@ export interface EncryptionState {
 }
 
 export interface MedsState {
+  /** Lists all intakes scheduled for this user */
+  intakes: Map<string, ScheduledIntake>;
   /** Lists all medications set in the application */
   medications: Record<string, Medication>;
 }
@@ -52,8 +69,11 @@ export interface UserState {
 }
 
 export type ActionsUnion =
+  | ClearScheduledIntakesAction
+  | DeleteScheduledIntakeAction
   | ResetAppAction
   | ResetUserAction
+  | SetScheduledIntakeAction
   | SetSentryEnrollmentAction
   | SetUserAction
   | UpdateMedicationAction;
