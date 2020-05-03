@@ -1,14 +1,14 @@
-import { ConfigAction } from './types';
+import { ActionsUnion, ConfigState } from '../types';
 
 /**
  * Resets the current user for this application
  */
-function setSentryEnrollment(updatedEnrollmentStatus: boolean): ConfigAction {
+function setSentryEnrollment(
+  updatedEnrollmentStatus: ConfigState['sentryEnrollment'],
+): ActionsUnion {
   return {
     type: 'SENTRY_ENROLLMENT',
-    value: {
-      sentryEnrollment: updatedEnrollmentStatus,
-    },
+    payload: updatedEnrollmentStatus,
   };
 }
 

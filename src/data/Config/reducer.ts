@@ -1,20 +1,18 @@
-import { ConfigState, ConfigAction } from './types';
-
-const INITIAL_STATE: ConfigState = {
-  sentryEnrollment: false,
-};
+import { ActionsUnion, ConfigState } from '../types';
 
 function configReducer(
-  state = INITIAL_STATE,
-  action: ConfigAction,
+  state: ConfigState = {
+    sentryEnrollment: false,
+  },
+  action: ActionsUnion,
 ): ConfigState {
-  const { type, value } = action;
+  const { type, payload } = action;
 
   switch (type) {
     case 'SENTRY_ENROLLMENT':
       return {
         ...state,
-        sentryEnrollment: value.sentryEnrollment,
+        sentryEnrollment: payload,
       };
 
     default:
