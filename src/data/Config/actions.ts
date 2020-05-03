@@ -1,5 +1,11 @@
 import { ActionsUnion, ConfigState } from '../types';
 
+function resetApplication(): ActionsUnion {
+  return {
+    type: `RESET_APP`,
+  };
+}
+
 /**
  * Resets the current user for this application
  */
@@ -12,4 +18,4 @@ function setSentryEnrollment(
   };
 }
 
-export { setSentryEnrollment };
+export { resetApplication, setSentryEnrollment };

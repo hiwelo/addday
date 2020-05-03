@@ -10,14 +10,17 @@ function userReducer(
   action: ActionsUnion,
 ): UserState {
   switch (action.type) {
+    case `RESET_APP`:
+      return INITIAL_STATE;
+
+    case 'RESET_USER':
+      return INITIAL_STATE;
+
     case 'SET_USER':
       return {
         ...state,
         ...action.payload,
       };
-
-    case 'RESET_USER':
-      return INITIAL_STATE;
 
     default:
       return state;

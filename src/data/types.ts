@@ -1,5 +1,9 @@
 import { Medication } from '../models/Medication';
 
+type ResetAppAction = {
+  type: `RESET_APP`;
+};
+
 type ResetUserAction = {
   type: `RESET_USER`;
 };
@@ -48,6 +52,7 @@ export interface UserState {
 }
 
 export type ActionsUnion =
+  | ResetAppAction
   | ResetUserAction
   | SetSentryEnrollmentAction
   | SetUserAction

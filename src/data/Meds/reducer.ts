@@ -1,10 +1,15 @@
 import { ActionsUnion, MedsState } from '../types';
 
+const INITIAL_STATE: MedsState = { medications: {} };
+
 function medsReducer(
-  state: MedsState = { medications: {} },
+  state: MedsState = INITIAL_STATE,
   action: ActionsUnion,
 ): MedsState {
   switch (action.type) {
+    case `RESET_APP`:
+      return INITIAL_STATE;
+
     case 'UPDATE_MEDICATION':
       return {
         ...state,
