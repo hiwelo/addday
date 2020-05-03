@@ -11,7 +11,7 @@ export interface ScheduledIntake {
   /** Unique Identifier for the scheduled intake */
   id: string;
   /** Lists medications to take during this intake moment */
-  medications: Map<string, ScheduledMedicationIntake>;
+  medications: Map<Medication['id'], ScheduledMedicationIntake>;
 }
 
 export type ScheduledMedicationIntake = {

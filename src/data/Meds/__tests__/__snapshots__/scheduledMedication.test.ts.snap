@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Scheduled Medications allows you to add a new scheduled medication 1`] = `
+Object {
+  "payload": Object {
+    "scheduledIntakeId": "testScheduledIntake",
+    "scheduledMedicationIntake": Object {
+      "medicationId": "testMedication",
+      "units": 2,
+    },
+  },
+  "type": "SET_SCHEDULED_MEDICATION_INTAKE_ACTION",
+}
+`;
+
+exports[`Scheduled Medications allows you to add a new scheduled medication 2`] = `
+Object {
+  "intakes": Map {
+    "testScheduledIntake" => Object {
+      "days": Object {
+        "friday": true,
+        "monday": true,
+        "saturday": false,
+        "sunday": false,
+        "thursday": true,
+        "tuesday": false,
+        "wednesday": false,
+      },
+      "id": "testScheduledIntake",
+      "medications": Map {
+        "testMedication" => Object {
+          "medicationId": "testMedication",
+          "units": 2,
+        },
+      },
+      "moment": "2020-05-03T18:00:00.000Z",
+    },
+  },
+  "medications": Object {},
+}
+`;
+
+exports[`Scheduled Medications allows you to clear all existing scheduled medication 1`] = `
+Object {
+  "payload": "testScheduledIntake",
+  "type": "CLEAR_SCHEDULED_MEDICATION_INTAKES_ACTION",
+}
+`;
+
+exports[`Scheduled Medications allows you to clear all existing scheduled medication 2`] = `
+Object {
+  "intakes": Map {
+    "testScheduledIntake" => Object {
+      "days": Object {
+        "friday": true,
+        "monday": true,
+        "saturday": false,
+        "sunday": false,
+        "thursday": true,
+        "tuesday": false,
+        "wednesday": false,
+      },
+      "id": "testScheduledIntake",
+      "medications": Map {},
+      "moment": "2020-05-03T18:00:00.000Z",
+    },
+  },
+  "medications": Object {},
+}
+`;
+
+exports[`Scheduled Medications allows you to delete an existing scheduled medication 1`] = `
+Object {
+  "payload": Object {
+    "scheduledIntakeId": "testScheduledIntake",
+    "scheduledMedicationId": "testMedication",
+  },
+  "type": "DELETE_SCHEDULED_MEDICATION_INTAKE_ACTION",
+}
+`;
+
+exports[`Scheduled Medications allows you to delete an existing scheduled medication 2`] = `
+Object {
+  "intakes": Map {
+    "testScheduledIntake" => Object {
+      "days": Object {
+        "friday": true,
+        "monday": true,
+        "saturday": false,
+        "sunday": false,
+        "thursday": true,
+        "tuesday": false,
+        "wednesday": false,
+      },
+      "id": "testScheduledIntake",
+      "medications": Map {},
+      "moment": "2020-05-03T18:00:00.000Z",
+    },
+  },
+  "medications": Object {},
+}
+`;
+
+exports[`Scheduled Medications allows you to update an existing scheduled medication 1`] = `
+Object {
+  "payload": Object {
+    "scheduledIntakeId": "testScheduledIntake",
+    "scheduledMedicationIntake": Object {
+      "medicationId": "testMedication",
+      "units": 4,
+    },
+  },
+  "type": "SET_SCHEDULED_MEDICATION_INTAKE_ACTION",
+}
+`;
+
+exports[`Scheduled Medications allows you to update an existing scheduled medication 2`] = `
+Object {
+  "intakes": Map {
+    "testScheduledIntake" => Object {
+      "days": Object {
+        "friday": true,
+        "monday": true,
+        "saturday": false,
+        "sunday": false,
+        "thursday": true,
+        "tuesday": false,
+        "wednesday": false,
+      },
+      "id": "testScheduledIntake",
+      "medications": Map {
+        "testMedication" => Object {
+          "medicationId": "testMedication",
+          "units": 4,
+        },
+      },
+      "moment": "2020-05-03T18:00:00.000Z",
+    },
+  },
+  "medications": Object {},
+}
+`;
+
+exports[`Scheduled Medications throws an error if you try to clear all existing scheduled medication for a missing ScheduledIntake 1`] = `"The requested scheduled intake was not found."`;
+
+exports[`Scheduled Medications throws an error if you try to delete a scheduled medication for a missing ScheduledIntake 1`] = `"The requested scheduled intake was not found."`;
+
+exports[`Scheduled Medications throws an error if you try to update a scheduled medication for a missing ScheduledIntake 1`] = `"The requested scheduled intake was not found."`;

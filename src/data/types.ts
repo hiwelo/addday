@@ -1,13 +1,29 @@
 import { Medication } from '../models/Medication';
-import { ScheduledIntake } from '../models/ScheduledIntake';
+import {
+  ScheduledIntake,
+  ScheduledMedicationIntake,
+} from '../models/ScheduledIntake';
 
 type ClearScheduledIntakesAction = {
   type: `CLEAR_SCHEDULED_INTAKES_ACTION`;
 };
 
+type ClearScheduledMedicationIntakeAction = {
+  type: `CLEAR_SCHEDULED_MEDICATION_INTAKES_ACTION`;
+  payload: ScheduledIntake['id'];
+};
+
 type DeleteScheduledIntakeAction = {
   type: `DELETE_SCHEDULED_INTAKE_ACTION`;
   payload: ScheduledIntake['id'];
+};
+
+type DeleteScheduledMedicationIntakeAction = {
+  type: `DELETE_SCHEDULED_MEDICATION_INTAKE_ACTION`;
+  payload: {
+    scheduledIntakeId: ScheduledIntake['id'];
+    scheduledMedicationId: Medication['id'];
+  };
 };
 
 type ResetAppAction = {
@@ -16,6 +32,14 @@ type ResetAppAction = {
 
 type ResetUserAction = {
   type: `RESET_USER`;
+};
+
+type SetScheduledMedicationIntakeAction = {
+  type: `SET_SCHEDULED_MEDICATION_INTAKE_ACTION`;
+  payload: {
+    scheduledIntakeId: ScheduledIntake['id'];
+    scheduledMedicationIntake: ScheduledMedicationIntake;
+  };
 };
 
 type SetScheduledIntakeAction = {
@@ -70,10 +94,13 @@ export interface UserState {
 
 export type ActionsUnion =
   | ClearScheduledIntakesAction
+  | ClearScheduledMedicationIntakeAction
   | DeleteScheduledIntakeAction
+  | DeleteScheduledMedicationIntakeAction
   | ResetAppAction
   | ResetUserAction
   | SetScheduledIntakeAction
+  | SetScheduledMedicationIntakeAction
   | SetSentryEnrollmentAction
   | SetUserAction
   | UpdateMedicationAction;
