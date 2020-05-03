@@ -29,6 +29,9 @@ const strings = {
       name: 'Name',
       namePlaceholder: 'Dextroamphetamine',
     },
+    scheduledIntake: {
+      title: 'Schedule Medications',
+    },
     submit: 'Submit',
     title: 'Medications',
     view: {

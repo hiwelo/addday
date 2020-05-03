@@ -51,6 +51,12 @@ const MedsScreen: React.FC = () => {
         renderItem={medicationItem}
         style={{ flex: 1 }}
       />
+      <Button
+        status="basic"
+        onPress={() => navigate('SetScheduledIntakeScreen')}
+      >
+        Create new schedule
+      </Button>
     </ViewLayout>
   );
 };
