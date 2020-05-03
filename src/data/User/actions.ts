@@ -1,12 +1,11 @@
-import { UserState, UserAction } from './types';
+import { ActionsUnion, UserState } from '../types';
 
 /**
  * Resets the current user for this application
  */
-function resetUser(): UserAction {
+function resetUser(): ActionsUnion {
   return {
     type: 'RESET_USER',
-    user: {},
   };
 }
 
@@ -15,10 +14,10 @@ function resetUser(): UserAction {
  *
  * @param newInformation New information to add in the UserState
  */
-function setUser(newInformation: Partial<UserState>): UserAction {
+function setUser(updatedInfo: Partial<UserState>): ActionsUnion {
   return {
     type: 'SET_USER',
-    user: newInformation,
+    payload: updatedInfo,
   };
 }
 

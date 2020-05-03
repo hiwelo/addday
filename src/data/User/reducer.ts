@@ -1,18 +1,19 @@
-import { UserState, UserAction } from './types';
+import { ActionsUnion, UserState } from '../types';
 
 const INITIAL_STATE: UserState = {
   firstName: '',
   isInitialized: false,
 };
 
-function userReducer(state = INITIAL_STATE, action: UserAction): UserState {
-  const { type, user } = action;
-
-  switch (type) {
+function userReducer(
+  state: UserState = INITIAL_STATE,
+  action: ActionsUnion,
+): UserState {
+  switch (action.type) {
     case 'SET_USER':
       return {
         ...state,
-        ...user,
+        ...action.payload,
       };
 
     case 'RESET_USER':

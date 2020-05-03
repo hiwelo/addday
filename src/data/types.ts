@@ -1,8 +1,11 @@
 import { Medication } from '../models/Medication';
-import { UserState } from './User/types';
 
 type GetEncryptionKeyAction = {
   type: `GET_ENCRYPTION_KEY`;
+};
+
+type ResetUserAction = {
+  type: `RESET_USER`;
 };
 
 type SetEncryptionKeyAction = {
@@ -13,6 +16,11 @@ type SetEncryptionKeyAction = {
 type SetSentryEnrollmentAction = {
   type: `SENTRY_ENROLLMENT`;
   payload: ConfigState['sentryEnrollment'];
+};
+
+type SetUserAction = {
+  type: `SET_USER`;
+  payload: Partial<UserState>;
 };
 
 type UpdateMedicationAction = {
@@ -41,10 +49,19 @@ export interface MedsState {
   medications: Record<string, Medication>;
 }
 
+export interface UserState {
+  /** Name of the user for this instance of the application */
+  firstName: string;
+  /** Indicates if the user initialized the application */
+  isInitialized: boolean;
+}
+
 export type ActionsUnion =
   | GetEncryptionKeyAction
+  | ResetUserAction
   | SetEncryptionKeyAction
   | SetSentryEnrollmentAction
+  | SetUserAction
   | UpdateMedicationAction;
 
 export type RootState = AppState;

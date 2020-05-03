@@ -11,8 +11,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useSelector } from 'react-redux';
 
 import i18nConfig from './config/i18n';
-import { UserState } from './data/User/types';
-import { RootState } from './data/types';
+import { UserState, RootState } from './data/types';
 import translations from './i18n/translations';
 import LocalizationContext from './services/LocalizationProvider';
 import customThemeMapping from './themes/customThemeMapping';
