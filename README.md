@@ -95,7 +95,8 @@ _[Android Studio] 3_.
 - **[expo-localization]** and **[i18n-js]** libraries for internationalization
 
 - **[redux]** and **[redux-persist]** libraries to provide an app-wide state
-  container persisted in the **[AsyncStorage]**.
+  container persisted in the **[FileSystem]** and secured using an encryption
+  key persisted in the **[SecureStore]**.
 
 ## Folder structure
 
@@ -123,15 +124,16 @@ _[Android Studio] 3_.
 ```
 
 [android studio]: https://developer.android.com/studio
-[asyncstorage]: https://docs.expo.io/versions/latest/react-native/asyncstorage/
 [expo]: https://expo.io/
 [expo cli]: https://docs.expo.io/versions/latest/workflow/expo-cli/
 [expo-localization]: https://docs.expo.io/versions/latest/sdk/localization/
 [expo-local-authentication]: https://docs.expo.io/versions/latest/sdk/local-authentication/
+[filesystem]: https://docs.expo.io/versions/latest/sdk/filesystem/
 [i18n-js]: https://github.com/fnando/i18n-js
 [react-native]: https://reactnative.dev/
 [react-navigation]: https://reactnavigation.org/
 [redux]: https://redux.js.org/
 [redux-persist]: https://github.com/rt2zz/redux-persist
+[securestore]: https://docs.expo.io/versions/latest/sdk/securestore/
 [styled-components]: https://styled-components.com/
 [ui-kitten]: https://akveo.github.io/react-native-ui-kitten/
