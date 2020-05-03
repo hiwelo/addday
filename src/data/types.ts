@@ -1,16 +1,7 @@
 import { Medication } from '../models/Medication';
 
-type GetEncryptionKeyAction = {
-  type: `GET_ENCRYPTION_KEY`;
-};
-
 type ResetUserAction = {
   type: `RESET_USER`;
-};
-
-type SetEncryptionKeyAction = {
-  type: `SET_ENCRYPTION_KEY`;
-  payload: EncryptionState['key'];
 };
 
 type SetSentryEnrollmentAction = {
@@ -57,9 +48,7 @@ export interface UserState {
 }
 
 export type ActionsUnion =
-  | GetEncryptionKeyAction
   | ResetUserAction
-  | SetEncryptionKeyAction
   | SetSentryEnrollmentAction
   | SetUserAction
   | UpdateMedicationAction;
