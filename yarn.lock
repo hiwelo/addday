@@ -2204,9 +2204,9 @@
     lodash.merge "^4.6.1"
 
 "@ui-kitten/eva-icons@^5.0.0-alpha.1":
-  version "5.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ui-kitten/eva-icons/-/eva-icons-5.0.0-alpha.1.tgz#869eeddff5a19e8752953aec6874988052d67ec0"
-  integrity sha512-KG/Dnv0wmJWEKp1LVr1AKhaSP5WKwBMCPcbeXn5JbBzTuZQZBrB4ikOXE8+I8zF0mYfu4TaMgfqTnWF67wBhzg==
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@ui-kitten/eva-icons/-/eva-icons-5.0.0.tgz#b8ab2fea3dafcb9f914534ef66a5dfd1badfeb1d"
+  integrity sha512-Iae3FtnNQKC0PnRnFDUpaCFhvUFaN+NkRxag6LstEjNqAMcVnsQbPTqPQFx18j920Z5S7f5/oZqaJ8NxZtPaNA==
   dependencies:
     react-native-eva-icons "^1.3.1"
 
