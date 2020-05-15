@@ -1,7 +1,7 @@
 import { Medication } from '../models/Medication';
 import {
   ScheduledIntake,
-  ScheduledMedicationIntake,
+  ScheduledMedication,
 } from '../models/ScheduledIntake';
 
 type ClearScheduledIntakesAction = {
@@ -38,7 +38,7 @@ type SetScheduledMedicationIntakeAction = {
   type: `SET_SCHEDULED_MEDICATION_INTAKE_ACTION`;
   payload: {
     scheduledIntakeId: ScheduledIntake['id'];
-    scheduledMedicationIntake: ScheduledMedicationIntake;
+    scheduledMedicationIntake: ScheduledMedication;
   };
 };
 
@@ -64,6 +64,7 @@ type UpdateMedicationAction = {
 
 export interface AppState {
   config: ConfigState;
+  intakes: ScheduledIntakeState;
   meds: MedsState;
   user: UserState;
 }
@@ -79,11 +80,11 @@ export interface EncryptionState {
 }
 
 export interface MedsState {
-  /** Lists all intakes scheduled for this user */
-  intakes: Map<string, ScheduledIntake>;
   /** Lists all medications set in the application */
   medications: Record<string, Medication>;
 }
+
+export type ScheduledIntakeState = Record<string, ScheduledIntake>;
 
 export interface UserState {
   /** Name of the user for this instance of the application */

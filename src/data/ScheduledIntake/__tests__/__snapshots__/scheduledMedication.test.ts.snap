@@ -15,28 +15,25 @@ Object {
 
 exports[`Scheduled Medications allows you to add a new scheduled medication 2`] = `
 Object {
-  "intakes": Map {
-    "testScheduledIntake" => Object {
-      "days": Map {
-        "monday" => true,
-        "tuesday" => false,
-        "wednesday" => false,
-        "thursday" => true,
-        "friday" => true,
-        "saturday" => false,
-        "sundary" => false,
-      },
-      "id": "testScheduledIntake",
-      "medications": Map {
-        "testMedication" => Object {
-          "medicationId": "testMedication",
-          "units": 2,
-        },
-      },
-      "moment": "2020-05-03T18:00:00.000Z",
+  "testScheduledIntake": Object {
+    "days": Object {
+      "friday": true,
+      "monday": true,
+      "saturday": false,
+      "sunday": false,
+      "thursday": true,
+      "tuesday": false,
+      "wednesday": false,
     },
+    "id": "testScheduledIntake",
+    "medications": Object {
+      "testMedication": Object {
+        "medicationId": "testMedication",
+        "units": 2,
+      },
+    },
+    "moment": "2020-01-01T18:00:00.000Z",
   },
-  "medications": Object {},
 }
 `;
 
@@ -49,23 +46,20 @@ Object {
 
 exports[`Scheduled Medications allows you to clear all existing scheduled medication 2`] = `
 Object {
-  "intakes": Map {
-    "testScheduledIntake" => Object {
-      "days": Map {
-        "monday" => true,
-        "tuesday" => false,
-        "wednesday" => false,
-        "thursday" => true,
-        "friday" => true,
-        "saturday" => false,
-        "sundary" => false,
-      },
-      "id": "testScheduledIntake",
-      "medications": Map {},
-      "moment": "2020-05-03T18:00:00.000Z",
+  "testScheduledIntake": Object {
+    "days": Object {
+      "friday": true,
+      "monday": true,
+      "saturday": false,
+      "sunday": false,
+      "thursday": true,
+      "tuesday": false,
+      "wednesday": false,
     },
+    "id": "testScheduledIntake",
+    "medications": Object {},
+    "moment": "2020-01-01T18:00:00.000Z",
   },
-  "medications": Object {},
 }
 `;
 
@@ -81,23 +75,20 @@ Object {
 
 exports[`Scheduled Medications allows you to delete an existing scheduled medication 2`] = `
 Object {
-  "intakes": Map {
-    "testScheduledIntake" => Object {
-      "days": Map {
-        "monday" => true,
-        "tuesday" => false,
-        "wednesday" => false,
-        "thursday" => true,
-        "friday" => true,
-        "saturday" => false,
-        "sundary" => false,
-      },
-      "id": "testScheduledIntake",
-      "medications": Map {},
-      "moment": "2020-05-03T18:00:00.000Z",
+  "testScheduledIntake": Object {
+    "days": Object {
+      "friday": true,
+      "monday": true,
+      "saturday": false,
+      "sunday": false,
+      "thursday": true,
+      "tuesday": false,
+      "wednesday": false,
     },
+    "id": "testScheduledIntake",
+    "medications": Object {},
+    "moment": "2020-01-01T18:00:00.000Z",
   },
-  "medications": Object {},
 }
 `;
 
@@ -116,28 +107,25 @@ Object {
 
 exports[`Scheduled Medications allows you to update an existing scheduled medication 2`] = `
 Object {
-  "intakes": Map {
-    "testScheduledIntake" => Object {
-      "days": Map {
-        "monday" => true,
-        "tuesday" => false,
-        "wednesday" => false,
-        "thursday" => true,
-        "friday" => true,
-        "saturday" => false,
-        "sundary" => false,
-      },
-      "id": "testScheduledIntake",
-      "medications": Map {
-        "testMedication" => Object {
-          "medicationId": "testMedication",
-          "units": 4,
-        },
-      },
-      "moment": "2020-05-03T18:00:00.000Z",
+  "testScheduledIntake": Object {
+    "days": Object {
+      "friday": true,
+      "monday": true,
+      "saturday": false,
+      "sunday": false,
+      "thursday": true,
+      "tuesday": false,
+      "wednesday": false,
     },
+    "id": "testScheduledIntake",
+    "medications": Object {
+      "testMedication": Object {
+        "medicationId": "testMedication",
+        "units": 4,
+      },
+    },
+    "moment": "2020-01-01T18:00:00.000Z",
   },
-  "medications": Object {},
 }
 `;
 

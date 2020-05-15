@@ -16,7 +16,7 @@ function useScheduledIntake(
   const intakes = useSelector(getScheduledIntakes);
 
   return scheduledIntakeId
-    ? intakes.get(scheduledIntakeId)
+    ? intakes[scheduledIntakeId]
     : createScheduledIntake();
 }
 

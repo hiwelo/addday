@@ -1,30 +1,10 @@
-import moment from 'moment';
-
-import { WeeklySchedule } from '../../../models/WeeklySchedule';
+import { mockedScheduledIntake } from '../__mocks__/scheduledIntake';
 import * as actions from '../actions';
 import reducer from '../reducer';
 
-const mockedMoment = moment.utc('18:00', 'HH:mm');
-
-const mockedWeeklySchedule: WeeklySchedule = new Map()
-  .set('monday', true)
-  .set('tuesday', false)
-  .set('wednesday', false)
-  .set('thursday', true)
-  .set('friday', true)
-  .set('saturday', false)
-  .set('sundary', false);
-
-const testScheduledIntake = {
-  days: mockedWeeklySchedule,
-  id: 'test',
-  moment: mockedMoment,
-  medications: new Map(),
-};
-
 describe('Scheduled Intakes', () => {
   it('allows you to add a new scheduled intake', () => {
-    const action = actions.setScheduledIntake(testScheduledIntake);
+    const action = actions.setScheduledIntake(mockedScheduledIntake);
     const state = reducer(undefined, action);
 
     expect(action).toMatchSnapshot();
@@ -32,14 +12,16 @@ describe('Scheduled Intakes', () => {
   });
 
   it('allows you to update an existing scheduled intake', () => {
-    const action = actions.setScheduledIntake(testScheduledIntake);
+    const action = actions.setScheduledIntake(mockedScheduledIntake);
     const state = reducer(undefined, action);
     const updateAction = actions.setScheduledIntake({
-      ...testScheduledIntake,
-      medications: new Map().set('test', {
-        medicationId: 'test',
-        units: 2,
-      }),
+      ...mockedScheduledIntake,
+      medications: {
+        test: {
+          medicationId: 'test',
+          units: 2,
+        },
+      },
     });
     const updatedState = reducer(state, updateAction);
 
@@ -48,9 +30,11 @@ describe('Scheduled Intakes', () => {
   });
 
   it('allows you to delete an existing scheduled intake', () => {
-    const action = actions.setScheduledIntake(testScheduledIntake);
+    const action = actions.setScheduledIntake(mockedScheduledIntake);
     const state = reducer(undefined, action);
-    const updateAction = actions.deleteScheduledIntake('test');
+    const updateAction = actions.deleteScheduledIntake(
+      mockedScheduledIntake.id,
+    );
     const updatedState = reducer(state, updateAction);
 
     expect(updateAction).toMatchSnapshot();
@@ -58,9 +42,9 @@ describe('Scheduled Intakes', () => {
   });
 
   it('allows you to clear all existing scheduled intake', () => {
-    const action1 = actions.setScheduledIntake(testScheduledIntake);
+    const action1 = actions.setScheduledIntake(mockedScheduledIntake);
     const action2 = actions.setScheduledIntake({
-      ...testScheduledIntake,
+      ...mockedScheduledIntake,
       id: 'test2',
     });
     const state = reducer(undefined, action1);

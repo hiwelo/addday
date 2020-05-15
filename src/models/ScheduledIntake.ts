@@ -11,10 +11,10 @@ export interface ScheduledIntake {
   /** Unique Identifier for the scheduled intake */
   id: string;
   /** Lists medications to take during this intake moment */
-  medications: Map<Medication['id'], ScheduledMedicationIntake>;
+  medications: Record<Medication['id'], ScheduledMedication>;
 }
 
-export type ScheduledMedicationIntake = {
+export type ScheduledMedication = {
   /** Medication to take */
   medicationId: Medication['id'];
   /** Units to take as part of this scheduled intake */

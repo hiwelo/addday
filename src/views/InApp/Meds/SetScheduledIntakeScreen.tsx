@@ -10,7 +10,7 @@ import FormLabel from '../../../components/FormLabel';
 import Space from '../../../components/Space';
 import ViewLayout from '../../../components/ViewLayout';
 import WeeklyScheduleSelector from '../../../components/WeeklyScheduleSelector/WeeklyScheduleSelector';
-import { setScheduledIntake as setScheduledIntakeAction } from '../../../data/Meds/actions';
+import { setScheduledIntake as setScheduledIntakeAction } from '../../../data/ScheduledIntake/actions';
 import { NavigationParamsList } from '../../../models/NavigationParamsList';
 import { ScheduledIntake } from '../../../models/ScheduledIntake';
 import { useScheduledIntake } from '../../../modules/meds';
