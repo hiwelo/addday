@@ -1,3 +1,21 @@
+# [1.3.0](https://github.com/hiwelo/addday/compare/v1.2.0...v1.3.0) (2020-05-16)
+
+
+### Bug Fixes
+
+* **store:** migrate ScheduledIntakeStore to IntakesStore ([5c3b94e](https://github.com/hiwelo/addday/commit/5c3b94e176a3b5ee8c1d8060d20faebd60975b22))
+
+
+### Features
+
+* **components:** create WeeklyScheduleSelector component ([fcfcb18](https://github.com/hiwelo/addday/commit/fcfcb1847afabc6100a72a8d4c0e6d47fda0e900))
+* **data:** create action to reset the store app-wide ([07f00d4](https://github.com/hiwelo/addday/commit/07f00d44db5b6afc6fb281bd1a1a04f9e71893d1))
+* **data:** create actions & reducers for medications in ScheduledIntake ([78d1012](https://github.com/hiwelo/addday/commit/78d1012a89552e9b1f0cc9e9cac1da3add6c5e8c))
+* **data:** create ScheduledIntake models, and related actions ([34ab279](https://github.com/hiwelo/addday/commit/34ab279a8454d7465b1f26423e860aed6b205022))
+* **settingsscreen:** update resetUser action to reset the whole app ([e83a018](https://github.com/hiwelo/addday/commit/e83a018a31a5eb355f73de01cf17498a89bc3680))
+* **views:** create basic view to make new ScheduledIntake ([2df0a2b](https://github.com/hiwelo/addday/commit/2df0a2b48340533174dd48982e06b470bebffe7c))
+* **views:** create skeleton for SetScheduledIntakeScreen ([37a7ea5](https://github.com/hiwelo/addday/commit/37a7ea518655c2411f548b320db707531083ba0d))
+
 # 1.0.0 (2020-05-02)
 
 
