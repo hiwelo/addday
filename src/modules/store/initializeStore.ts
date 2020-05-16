@@ -2,7 +2,6 @@ import { Store, createStore } from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
 import ExpoFileSystemStorage from 'redux-persist-expo-filesystem';
 import createEncryptor from 'redux-persist-transform-encrypt';
-import immutableTransform from 'redux-persist-transform-immutable';
 import { Persistor } from 'redux-persist/es/types';
 
 import { PERSISTOR_KEY_NAME } from '../../config/store';
@@ -38,7 +37,7 @@ function initializeStore({
   const persistConfig = {
     key: PERSISTOR_KEY_NAME,
     storage: ExpoFileSystemStorage,
-    transforms: [immutableTransform(), encryptor], // ! order is important there, encryptor should be last !
+    transforms: [encryptor], // ! order is important there, encryptor should be last !
   };
 
   const persistedReducer = persistReducer(persistConfig as any, rootReducer);

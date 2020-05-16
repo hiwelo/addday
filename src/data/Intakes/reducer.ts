@@ -1,4 +1,5 @@
 import { Map } from 'immutable';
+import { REHYDRATE } from 'redux-persist';
 
 import { ActionsUnion, IntakesState } from '../types';
 
@@ -18,6 +19,9 @@ function intakeReducer(
 
     case `SET_INTAKE_ACTION`:
       return state.set(action.payload.id, action.payload);
+
+    case REHYDRATE:
+      return Map(action.payload.intakes);
 
     default:
       return state;

@@ -1,4 +1,5 @@
 import { Map } from 'immutable';
+import { REHYDRATE } from 'redux-persist';
 
 import { Intake } from '../models/Intake';
 import { Medication } from '../models/Medication';
@@ -10,6 +11,11 @@ type ClearIntakesAction = {
 type DeleteIntakeAction = {
   type: `DELETE_INTAKE_ACTION`;
   payload: Intake['id'];
+};
+
+type RehydrateAction = {
+  type: typeof REHYDRATE;
+  payload: AppState;
 };
 
 type ResetAppAction = {
@@ -74,6 +80,7 @@ export interface UserState {
 export type ActionsUnion =
   | ClearIntakesAction
   | DeleteIntakeAction
+  | RehydrateAction
   | ResetAppAction
   | ResetUserAction
   | SetIntakeAction
