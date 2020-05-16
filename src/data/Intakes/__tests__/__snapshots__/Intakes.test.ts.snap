@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Scheduled Intakes allows you to add a new scheduled intake 1`] = `
+exports[`Intakes allows you to add a new intake 1`] = `
 Object {
   "payload": Object {
     "days": Object {
@@ -13,15 +13,14 @@ Object {
       "wednesday": false,
     },
     "id": "testScheduledIntake",
-    "medications": Object {},
     "moment": "2020-01-01T18:00:00.000Z",
   },
-  "type": "SET_SCHEDULED_INTAKE_ACTION",
+  "type": "SET_INTAKE_ACTION",
 }
 `;
 
-exports[`Scheduled Intakes allows you to add a new scheduled intake 2`] = `
-Object {
+exports[`Intakes allows you to add a new intake 2`] = `
+Immutable.Map {
   "testScheduledIntake": Object {
     "days": Object {
       "friday": true,
@@ -33,73 +32,60 @@ Object {
       "wednesday": false,
     },
     "id": "testScheduledIntake",
-    "medications": Object {},
     "moment": "2020-01-01T18:00:00.000Z",
   },
 }
 `;
 
-exports[`Scheduled Intakes allows you to clear all existing scheduled intake 1`] = `
+exports[`Intakes allows you to clear all existing intake 1`] = `
 Object {
-  "type": "CLEAR_SCHEDULED_INTAKES_ACTION",
+  "type": "CLEAR_INTAKES_ACTION",
 }
 `;
 
-exports[`Scheduled Intakes allows you to clear all existing scheduled intake 2`] = `Object {}`;
+exports[`Intakes allows you to clear all existing intake 2`] = `Immutable.Map {}`;
 
-exports[`Scheduled Intakes allows you to delete an existing scheduled intake 1`] = `
+exports[`Intakes allows you to delete an existing intake 1`] = `
 Object {
   "payload": "testScheduledIntake",
-  "type": "DELETE_SCHEDULED_INTAKE_ACTION",
+  "type": "DELETE_INTAKE_ACTION",
 }
 `;
 
-exports[`Scheduled Intakes allows you to delete an existing scheduled intake 2`] = `Object {}`;
+exports[`Intakes allows you to delete an existing intake 2`] = `Immutable.Map {}`;
 
-exports[`Scheduled Intakes allows you to update an existing scheduled intake 1`] = `
+exports[`Intakes allows you to update an existing intake 1`] = `
 Object {
   "payload": Object {
     "days": Object {
       "friday": true,
       "monday": true,
       "saturday": false,
-      "sunday": false,
+      "sunday": true,
       "thursday": true,
       "tuesday": false,
       "wednesday": false,
     },
     "id": "testScheduledIntake",
-    "medications": Object {
-      "test": Object {
-        "medicationId": "test",
-        "units": 2,
-      },
-    },
     "moment": "2020-01-01T18:00:00.000Z",
   },
-  "type": "SET_SCHEDULED_INTAKE_ACTION",
+  "type": "SET_INTAKE_ACTION",
 }
 `;
 
-exports[`Scheduled Intakes allows you to update an existing scheduled intake 2`] = `
-Object {
+exports[`Intakes allows you to update an existing intake 2`] = `
+Immutable.Map {
   "testScheduledIntake": Object {
     "days": Object {
       "friday": true,
       "monday": true,
       "saturday": false,
-      "sunday": false,
+      "sunday": true,
       "thursday": true,
       "tuesday": false,
       "wednesday": false,
     },
     "id": "testScheduledIntake",
-    "medications": Object {
-      "test": Object {
-        "medicationId": "test",
-        "units": 2,
-      },
-    },
     "moment": "2020-01-01T18:00:00.000Z",
   },
 }

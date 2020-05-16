@@ -55,7 +55,7 @@ const MedsScreen: React.FC = () => {
         status="basic"
         onPress={() => navigate('SetScheduledIntakeScreen')}
       >
-        Create new schedule
+        Create new intake
       </Button>
     </ViewLayout>
   );

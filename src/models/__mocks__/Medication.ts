@@ -1,4 +1,4 @@
-import { Medication } from '../../../models/Medication';
+import { Medication } from '../Medication';
 
 export const mockedMedication: Medication = {
   id: 'testMedication',

@@ -1,8 +1,8 @@
 import moment from 'moment';
 
-import { ScheduledIntake } from '../../models/ScheduledIntake';
+import { Intake } from '../../models/Intake';
 
-function createScheduledIntake(): ScheduledIntake {
+function createIntake(): Intake {
   return {
     days: {
       monday: false,
@@ -14,9 +14,8 @@ function createScheduledIntake(): ScheduledIntake {
       sunday: false,
     },
     id: '',
-    medications: {},
     moment: moment(),
   };
 }
 
-export default createScheduledIntake;
+export default createIntake;

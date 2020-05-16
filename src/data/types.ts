@@ -1,29 +1,15 @@
+import { Map } from 'immutable';
+
+import { Intake } from '../models/Intake';
 import { Medication } from '../models/Medication';
-import {
-  ScheduledIntake,
-  ScheduledMedication,
-} from '../models/ScheduledIntake';
 
-type ClearScheduledIntakesAction = {
-  type: `CLEAR_SCHEDULED_INTAKES_ACTION`;
+type ClearIntakesAction = {
+  type: `CLEAR_INTAKES_ACTION`;
 };
 
-type ClearScheduledMedicationIntakeAction = {
-  type: `CLEAR_SCHEDULED_MEDICATION_INTAKES_ACTION`;
-  payload: ScheduledIntake['id'];
-};
-
-type DeleteScheduledIntakeAction = {
-  type: `DELETE_SCHEDULED_INTAKE_ACTION`;
-  payload: ScheduledIntake['id'];
-};
-
-type DeleteScheduledMedicationIntakeAction = {
-  type: `DELETE_SCHEDULED_MEDICATION_INTAKE_ACTION`;
-  payload: {
-    scheduledIntakeId: ScheduledIntake['id'];
-    scheduledMedicationId: Medication['id'];
-  };
+type DeleteIntakeAction = {
+  type: `DELETE_INTAKE_ACTION`;
+  payload: Intake['id'];
 };
 
 type ResetAppAction = {
@@ -34,17 +20,9 @@ type ResetUserAction = {
   type: `RESET_USER`;
 };
 
-type SetScheduledMedicationIntakeAction = {
-  type: `SET_SCHEDULED_MEDICATION_INTAKE_ACTION`;
-  payload: {
-    scheduledIntakeId: ScheduledIntake['id'];
-    scheduledMedicationIntake: ScheduledMedication;
-  };
-};
-
-type SetScheduledIntakeAction = {
-  type: `SET_SCHEDULED_INTAKE_ACTION`;
-  payload: ScheduledIntake;
+type SetIntakeAction = {
+  type: `SET_INTAKE_ACTION`;
+  payload: Intake;
 };
 
 type SetSentryEnrollmentAction = {
@@ -64,7 +42,7 @@ type UpdateMedicationAction = {
 
 export interface AppState {
   config: ConfigState;
-  intakes: ScheduledIntakeState;
+  intakes: IntakesState;
   meds: MedsState;
   user: UserState;
 }
@@ -79,12 +57,12 @@ export interface EncryptionState {
   key: string | null;
 }
 
+export type IntakesState = Map<Intake['id'], Intake>;
+
 export interface MedsState {
   /** Lists all medications set in the application */
   medications: Record<string, Medication>;
 }
-
-export type ScheduledIntakeState = Record<string, ScheduledIntake>;
 
 export interface UserState {
   /** Name of the user for this instance of the application */
@@ -94,14 +72,11 @@ export interface UserState {
 }
 
 export type ActionsUnion =
-  | ClearScheduledIntakesAction
-  | ClearScheduledMedicationIntakeAction
-  | DeleteScheduledIntakeAction
-  | DeleteScheduledMedicationIntakeAction
+  | ClearIntakesAction
+  | DeleteIntakeAction
   | ResetAppAction
   | ResetUserAction
-  | SetScheduledIntakeAction
-  | SetScheduledMedicationIntakeAction
+  | SetIntakeAction
   | SetSentryEnrollmentAction
   | SetUserAction
   | UpdateMedicationAction;

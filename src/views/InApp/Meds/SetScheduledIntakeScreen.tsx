@@ -10,10 +10,10 @@ import FormLabel from '../../../components/FormLabel';
 import Space from '../../../components/Space';
 import ViewLayout from '../../../components/ViewLayout';
 import WeeklyScheduleSelector from '../../../components/WeeklyScheduleSelector/WeeklyScheduleSelector';
-import { setScheduledIntake as setScheduledIntakeAction } from '../../../data/ScheduledIntake/actions';
+import { setIntake as setIntakeAction } from '../../../data/Intakes/actions';
 import { NavigationParamsList } from '../../../models/NavigationParamsList';
 import { ScheduledIntake } from '../../../models/ScheduledIntake';
-import { useScheduledIntake } from '../../../modules/meds';
+import { useIntake } from '../../../modules/intakes';
 import { createUuid } from '../../../modules/random';
 import { useI18n } from '../../../services/LocalizationProvider';
 
@@ -24,19 +24,19 @@ const SetScheduledIntakeScreen: React.FC = () => {
   const { params } = useRoute<
     RouteProp<NavigationParamsList, 'SetScheduledIntakeScreen'>
   >();
-  const [scheduledIntake, setScheduledIntake] = React.useState(
-    useScheduledIntake(params ? params.id : undefined),
+  const [intake, setIntake] = React.useState(
+    useIntake(params ? params.id : undefined),
   );
   const [datePickerVisibility, setDatePickerVisibility] = React.useState(false);
 
   const submitScheduledIntake = () => {
-    dispatch(setScheduledIntakeAction(scheduledIntake));
+    dispatch(setIntakeAction(intake));
     navigate('MedsScreens');
   };
 
   const updateMoment = (event: Event, selectedDate: Date): void => {
-    setScheduledIntake({
-      ...scheduledIntake,
+    setIntake({
+      ...intake,
       moment: moment(selectedDate),
     });
   };
@@ -44,8 +44,8 @@ const SetScheduledIntakeScreen: React.FC = () => {
   const updateWeeklySchedule = (
     weeklySchedule: ScheduledIntake['days'],
   ): void => {
-    setScheduledIntake({
-      ...scheduledIntake,
+    setIntake({
+      ...intake,
       days: weeklySchedule,
     });
   };
@@ -54,17 +54,17 @@ const SetScheduledIntakeScreen: React.FC = () => {
    * Effect aiming to generate a unique ID for the new ScheduledIntake if needed
    */
   React.useEffect(() => {
-    if (scheduledIntake.id) return;
+    if (intake.id) return;
 
     (async () => {
-      setScheduledIntake({
-        ...scheduledIntake,
+      setIntake({
+        ...intake,
         id: await createUuid(),
       });
     })();
   });
 
-  if (!scheduledIntake.id) return null;
+  if (!intake.id) return null;
 
   return (
     <ViewLayout
@@ -73,7 +73,7 @@ const SetScheduledIntakeScreen: React.FC = () => {
       scrollable
     >
       <WeeklyScheduleSelector
-        weeklySchedule={scheduledIntake.days}
+        weeklySchedule={intake.days}
         onChange={updateWeeklySchedule}
       />
       <Space type="comfortable">
@@ -83,11 +83,11 @@ const SetScheduledIntakeScreen: React.FC = () => {
         <TouchableWithoutFeedback
           onPress={() => setDatePickerVisibility(!datePickerVisibility)}
         >
-          <Text category="p1">{scheduledIntake.moment.format('HH:mm')}</Text>
+          <Text category="p1">{intake.moment.format('HH:mm')}</Text>
         </TouchableWithoutFeedback>
         {datePickerVisibility && (
           <DateTimePicker
-            value={scheduledIntake.moment.toDate()}
+            value={intake.moment.toDate()}
             mode="time"
             onChange={updateMoment}
           />
