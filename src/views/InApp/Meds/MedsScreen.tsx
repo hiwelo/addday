@@ -1,32 +1,30 @@
 import { useNavigation } from '@react-navigation/native';
 import { Button, List, ListItem } from '@ui-kitten/components';
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import ViewLayout from '../../../components/ViewLayout';
-import { Medication } from '../../../models/Medication';
-import useMeds from '../../../modules/meds/hooks';
+import { getIntakes } from '../../../data/Intakes/selectors';
+import { Intake } from '../../../models/Intake';
 import { useI18n } from '../../../services/LocalizationProvider';
 
 const MedsScreen: React.FC = () => {
   const { __ } = useI18n();
-  const { medications } = useMeds();
+  const intakes = useSelector(getIntakes);
   const { navigate } = useNavigation();
 
   /** Item to render for each medication to display */
-  const medicationItem = ({
-    item: { alias, dosage, id, name },
-    index,
+  const intakeItem = ({
+    item: [id, { days }],
   }: {
-    item: Medication;
+    item: [Intake['id'], Intake];
     index: number;
   }) => {
-    const details = [alias, dosage].filter(Boolean);
-
     return (
       <ListItem
-        description={details.join(' • ')}
-        key={index}
-        title={name}
+        description="test"
+        key={id}
+        title={id}
         accessory={style => (
           <Button
             {...style}
@@ -47,8 +45,8 @@ const MedsScreen: React.FC = () => {
       sideAction={() => navigate('NewMedicationScreen')}
     >
       <List
-        data={Object.values(medications)}
-        renderItem={medicationItem}
+        data={Array.from(intakes)}
+        renderItem={intakeItem}
         style={{ flex: 1 }}
       />
       <Button
