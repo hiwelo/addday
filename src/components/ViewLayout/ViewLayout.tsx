@@ -11,12 +11,13 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import ViewHeader from '../ViewHeader';
 import { ViewHeaderProps } from '../ViewHeader/ViewHeader';
 import ContentWrapper from './components/ContentWrapper';
-import ViewContainer from './components/ViewContainer';
+import ViewContainer, { ViewContainerProps } from './components/ViewContainer';
 
 const ViewLayout: React.FC<ViewLayoutProps> = ({
   children,
   headerTitle,
   hideTabs,
+  pastelBackground,
   scrollable,
   ...rest
 }) => {
@@ -26,7 +27,7 @@ const ViewLayout: React.FC<ViewLayoutProps> = ({
 
   /** Wraps the content in a scrollview if scrollable is requested */
   return (
-    <ViewContainer>
+    <ViewContainer pastelBackground={pastelBackground}>
       <StatusBar barStyle={statusBarColor} />
       <TouchableWithoutFeedback accessible={false} onPress={Keyboard.dismiss}>
         <SafeAreaView style={{ flex: 1 }}>
@@ -38,7 +39,7 @@ const ViewLayout: React.FC<ViewLayoutProps> = ({
   );
 };
 
-export interface ViewLayoutProps extends ViewHeaderProps {
+export interface ViewLayoutProps extends ViewHeaderProps, ViewContainerProps {
   /** Renders a header with a back button at the top of the view */
   headerTitle?: string;
   /** Removes the tab navigation from the view */

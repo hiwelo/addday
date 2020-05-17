@@ -2,6 +2,14 @@
 const langCode = 'en';
 
 const strings = {
+  auth: {
+    headline: 'Welcome back,',
+    headlineEnding: '!',
+    contentHeadline: "We've got you covered.",
+    contentStart: 'Everything you share with ADDday is ',
+    contentBold: 'encrypted on your device ',
+    contentEnd: 'to make sure you are the only person accessing it.',
+  },
   dashboardScreen: {
     title: 'Hey there! 👋',
     subtitle: 'How are you today, {{firstName}}?',
