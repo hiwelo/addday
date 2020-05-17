@@ -61,7 +61,7 @@ jobs:
         if: always()
         with:
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          env_url: 'https://expo.io/@hiwelo/addday?release-channel=preview'
+          env_url: 'https://expo.io/@hiwelo/addday?release-channel=store'
           status: ${{ job.status }}
           step: finish
           token: ${{ secrets.GITHUB_TOKEN }}
