@@ -1,3 +1,17 @@
+# [1.4.0](https://github.com/hiwelo/addday/compare/v1.3.0...v1.4.0) (2020-05-17)
+
+
+### Bug Fixes
+
+* **store:** fix rehydration of Immutable objects ([fd8347f](https://github.com/hiwelo/addday/commit/fd8347fad661104587d1af441ca12446e4c3202b))
+
+
+### Features
+
+* **authenticationscreen:** implement design for the screen ([ad012ef](https://github.com/hiwelo/addday/commit/ad012ef0e6e674e4ab91955a49ffdb596ed42178))
+* **meds:** display Intakes in MedsScreen ([06abcbf](https://github.com/hiwelo/addday/commit/06abcbf33ff48b6709dbe42b18ae054cef0154b7))
+* **medsscreen:** render human readable list of days for MedsScreen ([900145b](https://github.com/hiwelo/addday/commit/900145bf2a810d3189a11def6b0066e1b7dd4050))
+
 # [1.3.0](https://github.com/hiwelo/addday/compare/v1.2.0...v1.3.0) (2020-05-16)
 
 
