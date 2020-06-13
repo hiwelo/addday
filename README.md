@@ -1,7 +1,7 @@
 # ADDday
 
 ![ADDday CI](https://github.com/hiwelo/addday/workflows/ADDday%20CI/badge.svg)
-![Publish ADDday](https://github.com/hiwelo/addday/workflows/Publish%20ADDday/badge.svg?branch=master)
+![Publish ADDday](https://github.com/hiwelo/addday/workflows/Publish%20ADDday/badge.svg?branch=develop)
 
 _ADDday • Ad(h)d your day_ is a project of digital companion for people with
 attention deficit with or without hyperactivity disorder.

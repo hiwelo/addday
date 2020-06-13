@@ -3,7 +3,7 @@ name: Publish ADDday
 on:
   push:
     branches:
-      - master
+      - develop
 
 jobs:
   setup:
