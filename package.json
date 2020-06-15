@@ -125,7 +125,7 @@
   },
   "release": {
     "branches": [
-      "develop, stable"
+      "develop"
     ],
     "verifyConditions": [
       "semantic-release-expo",
