@@ -124,6 +124,9 @@
     }
   },
   "release": {
+    "branches": [
+      "develop, stable"
+    ],
     "verifyConditions": [
       "semantic-release-expo",
       "@semantic-release/changelog",
