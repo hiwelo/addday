@@ -1741,9 +1741,9 @@
   integrity sha512-PpMoeXwPUoldCRKDuSi+zK5rT+sJTW6ri6RdGPkSKRzU77Q1d9IaR0O5IKvBj0XSdL3p+dcOa05gk35aGDffBQ==
 
 "@react-navigation/bottom-tabs@^5.2.6":
-  version "5.5.2"
-  resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-5.5.2.tgz#b3d95e2a05eba47f7aa34fb9f2331ddede0ee4d5"
-  integrity sha512-unopBnv8i3hcjhp2qdhgSwF6GFnhkdtPwGbvJMOG8Na19oPscT8UQDUbHZKs9wiJMk2Q0usEz2PbFh8GQGAf7w==
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-5.6.0.tgz#af741da87430e1e68e8d0a53ed58a4a21a09efc2"
+  integrity sha512-iLzhNMeme6qpD8/QUSaCxbkg2RsqyGNqU7cVb3UblLzqk1C1KB/o1nlAUC1KJxNsnV+7p1F0aVL2wQXSnnP51A==
   dependencies:
     color "^3.1.2"
     react-native-iphone-x-helper "^1.2.1"
