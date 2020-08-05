@@ -1763,9 +1763,9 @@
   integrity sha512-PpMoeXwPUoldCRKDuSi+zK5rT+sJTW6ri6RdGPkSKRzU77Q1d9IaR0O5IKvBj0XSdL3p+dcOa05gk35aGDffBQ==
 
 "@react-navigation/bottom-tabs@^5.2.6":
-  version "5.7.3"
-  resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-5.7.3.tgz#0105c95cd1a35948843ad3f6464b3c25febb1ccc"
-  integrity sha512-sLlnxhrAdRzEvzI9jJS46DMveTu/Ij5f0cE+5F6AGUT4M5Ge4HPtTU3e4HRvXioVwj+Gn/nzRA928BtTin10gQ==
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-5.8.0.tgz#d7386809bceeead0adcaacf61b6563be9cefd5cb"
+  integrity sha512-geF/FSIg6cArY5jLwJJZrp7PDzLoSrONkCgq9n/4yKxtQapB/Pn5ljSHCNRGNkkb/+g8zqRQmEL5yX4DOja0OA==
   dependencies:
     color "^3.1.2"
     react-native-iphone-x-helper "^1.2.1"
@@ -4052,11 +4052,6 @@ cssstyle@^1.0.0:
   integrity sha512-GBrLZYZ4X4x6/QEoBnIrqb8B/f5l4+8me2dkom/j1Gtbxy0kBv6OGzKuAsGM75bkGwGAFkt56Iwg28S3XTZgSA==
   dependencies:
     cssom "0.3.x"
-
-csstype@^2.2.0:
-  version "2.6.10"
-  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.10.tgz#e63af50e66d7c266edb6b32909cfd0aabe03928b"
-  integrity sha512-D34BqZU4cIlMCY93rZHbrq9pjTAQJ3U8S8rfBqjwHxkGPThWFjzZDQpgMJY0QViLxth6ZKYiwFBo14RdN44U/w==
 
 csstype@^3.0.2:
   version "3.0.2"
