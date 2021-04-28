@@ -1,0 +1,25 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  assignees:
+  - hiwelo
+  labels:
+  - "\U0001F4E6 Dependencies"
+  versioning-strategy: lockfile-only
+  ignore:
+  - dependency-name: "@types/node"
+    versions:
+    - 13.13.46
+  - dependency-name: "@babel/core"
+    versions:
+    - 7.13.10
+    - 7.13.8
+  - dependency-name: semantic-release
+    versions:
+    - 17.4.0
+    - 17.4.1
