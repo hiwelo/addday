@@ -2377,9 +2377,9 @@
     csstype "^3.0.2"
 
 "@types/redux-persist-transform-encrypt@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@types/redux-persist-transform-encrypt/-/redux-persist-transform-encrypt-2.0.1.tgz#28919911842232b10c8f7ae5d7942fc79a38e962"
-  integrity sha512-bRgZBmoR+AiGRzTkVPA/AaFaaQ+8HyXIjT9OhmY59lL12SzXj8O+uBKRlr+yYrBflR9xSGqz9iVYnTl8dCCeFg==
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@types/redux-persist-transform-encrypt/-/redux-persist-transform-encrypt-2.0.2.tgz#e56f7976d9d0f342b86495009676af51155b529e"
+  integrity sha512-yzLibQB7//FC/e+izCt5QYkUWqzKsQ2Izcbo6f2sLdJIhnf5/yC9t2/UbRS9n+eCoJ+b6vpU2/QVczIXsGyyAQ==
   dependencies:
     redux "^3.6.0"
     redux-persist "^4.5.0"
